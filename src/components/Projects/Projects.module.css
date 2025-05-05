@@ -1,0 +1,213 @@
+/* Project card container */
+.gradientBorder {
+    position: relative;
+    background: var(--secondary-bg);
+    border-radius: 1rem;
+    padding: 1px;
+    overflow: hidden;
+  }
+  
+  .gradientBorder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    padding: 2px;
+    background: linear-gradient(45deg, var(--accent), #00ff88);
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  
+  /* Project card styling */
+  .projectCard {
+    background: var(--secondary-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    height: 100%;
+  }
+  
+  .projectImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Projects grid layout */
+  .projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .closeButton:hover {
+    color: var(--accent);
+  }
+  
+  .projectMedia {
+    width: 100%;
+    height: 60vh;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .projectVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .projectDetails {
+    padding: 2rem 0;
+  }
+  
+  .projectLink {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--accent);
+    color: var(--primary-bg);
+    border-radius: 50px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .projectLink:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Add these new styles */
+.projectOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+  cursor: pointer;
+  width: 90vw;
+}
+
+.expandedProject {
+  background: var(--secondary-bg);
+  width: 95%;
+  height: 80vh;
+  max-width: 1400px;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  cursor: default;
+}
+
+.projectContent {
+  display: flex;
+  height: 100%;
+}
+
+.mediaContainer {
+  flex: 1 1 60%;
+  position: relative;
+  overflow: hidden;
+}
+
+.projectVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detailsContainer {
+  flex: 1 1 40%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.closeButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+
+.closeButton:hover {
+  color: var(--accent);
+}
+
+.projectLink {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .expandedProject {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  
+  .projectContent {
+    flex-direction: column;
+  }
+  
+  .mediaContainer {
+    flex: 2;
+  }
+  
+  .detailsContainer {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .closeButton {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+
+  @media (max-width: 768px) {
+    .expandedProject {
+      width: 95%;
+      padding: 1rem;
+    }
+    
+    .projectMedia {
+      height: 40vh;
+    }
+  }
