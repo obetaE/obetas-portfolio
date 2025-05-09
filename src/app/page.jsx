@@ -4,6 +4,8 @@ import styles from "./home.module.css"
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Projects from "@/components/Projects/Projects";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import Skills from "@/components/Skills/Skills"
+import Contact from "@/components/Contact/Contact";
 
 export default function Home() {
 
@@ -94,13 +96,15 @@ export default function Home() {
       </section>
 
       <section id="skills" className={styles.section}>
+        <div className={styles.skills}>
         <h2 className={styles.sectionTitle}>Skills</h2>
-        {/* Add skills grid here */}
+        <Skills/>
+        </div>
       </section>
 
       <section id="contact" className={styles.section}>
-        <h2 className={styles.sectionTitle}>Contact Me</h2>
-        {/* Add contact form here */}
+         <Contact/>
+        
       </section>
 
     </>

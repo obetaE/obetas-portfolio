@@ -1,0 +1,245 @@
+.skillsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.categorySection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.categoryTitle {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.skillCard {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.skillCard:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.iconWrapper {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.skillName {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.progressBar {
+  background: rgba(255, 255, 255, 0.1);
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+.skillDescription {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+  color: var(--text-primary);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.skillCard:hover .skillDescription {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Certifications Section */
+.certificationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.certificationCard {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border-left: 4px solid var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.certificationCard:hover {
+  transform: translateY(-5px);
+}
+
+.certificationHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.certificationIcon {
+  color: var(--accent);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.certificationName {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.certificationDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.issuer {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.year {
+  color: var(--accent);
+  font-weight: 600;
+  background: rgba(0, 255, 136, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
+
+/* 3D Orb Section Enhancements */
+.orbSection {
+  height: 600px; /* Increased height */
+  width: 100%;
+  margin: 4rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.orbCanvas {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--primary-bg), #0f0f0f);
+}
+
+/* Add rotation animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.orbSection canvas {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Tags Cloud */
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: start;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tag {
+  background: rgba(0, 255, 136, 0.1);
+  color: var(--accent);
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--accent);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tag:hover {
+  background: rgba(0, 255, 136, 0.2);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .orbSection {
+    height: 300px;
+    margin: 2rem 0;
+  }
+  
+  .tag {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .certificationsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .certificationCard {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .skillCard {
+    padding: 1rem;
+    min-height: 180px;
+  }
+  
+  .iconWrapper {
+    font-size: 2rem;
+  }
+  
+  .categoryTitle {
+    font-size: 1.5rem;
+  }
+  
+  .skillDescription {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+}
+
