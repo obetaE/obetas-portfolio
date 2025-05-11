@@ -31,7 +31,7 @@ export default function Home() {
 
           <div className={styles.socialLinks}>
     <motion.a 
-      href="https://github.com/yourusername" 
+      href="https://github.com/obetaE" 
       aria-label="Visit my GitHub profile"
       target="_blank"
       rel="noopener noreferrer"
@@ -41,7 +41,7 @@ export default function Home() {
       <FaGithub size={24} />
     </motion.a>
     <motion.a
-      href="https://linkedin.com/in/yourprofile"
+      href="https://linkedin.com/in/chukwuka-obeta-codes"
       aria-label="Visit my LinkedIn profile"
       target="_blank"
       rel="noopener noreferrer"
