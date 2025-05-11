@@ -61,7 +61,7 @@ export default function Home() {
       <FaTwitter size={24} />
     </motion.a>
     <motion.a
-      href="mailto:your@email.com"
+      href="mailto:obetachukwuka@gmail.com"
       whileHover={{ scale: 1.2 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
@@ -79,7 +79,7 @@ export default function Home() {
           >
             <div className={styles.imageWrapper}>
               <img 
-                src="/1.jpg"  // Replace with your image filename
+                src="/cv.jpeg" 
                 alt="Eric Obeta" 
                 className={styles.profileImg}
               />

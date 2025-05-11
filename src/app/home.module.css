@@ -189,7 +189,8 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .heroContent {
-    flex-direction: column;
+    padding-top: 2rem;
+    flex-direction: column-reverse;
     text-align: center;
   }
   

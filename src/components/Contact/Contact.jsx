@@ -75,7 +75,7 @@ export default function Contact() {
           <div className={styles.contactMethods}>
             <div className={styles.contactItem}>
               <FaEnvelope className={styles.contactIcon} />
-              <span>your.email@example.com</span>
+              <span>ObetaChukwuka1@gmail.com</span>
             </div>
             
             <div className={styles.contactItem}>

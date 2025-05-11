@@ -1,32 +1,45 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Projects.module.css';
 
 const projects = [
   {
-    title: "Project 1",
-    shortDesc: "Brief description",
-    longDesc: "Detailed description of the project...",
-    image: "/1.jpg",
+    title: "Gamma Suites",
+    shortDesc: "A vibrant, modern hotel website built with React and Next.js, featuring an engaging dark theme, interactive sections, and responsive design. It showcases amenities, attractions, and a luxury experience tailored for urban travelers.",
+    longDesc: "This is a fully responsive hotel website designed with a bold nightlife-inspired aesthetic, using a deep charcoal background with electric purple and cool blue accents. Built with React and Next.js, it features an elegant user interface optimized for both desktop and mobile devices. The site includes a dynamic Experiences section highlighting the hotel's premium amenities and a visually rich Attractions slider that transitions between local destinations with synchronized content and imagery. Animations and smooth interactions elevate the user experience, while clean, semantic code ensures scalability and performance. From layout to micro-interactions, every element was crafted to convey a sense of style, energy, and comfort — perfect for travelers seeking a modern escape.",
+    image: "GammaSuites.PNG",
     video: "/2.mp4",
-    link: "https://project1.com"
+    link: "https://gammasuites.vercel.app/"
   },
   {
-    title: "Project 1",
-    shortDesc: "Brief description",
-    longDesc: "Detailed description of the project...",
-    image: "/1.jpg",
-    video: "/2.mp4",
-    link: "https://project1.com"
-  },
+  title: "Travelling With Erii!!",
+  shortDesc: "A fully responsive, custom-designed travel blog built from scratch to showcase modern web development and UI/UX practices. This project features dynamic content loading, SEO optimization, and interactive elements, all wrapped in a wanderlust-inspired aesthetic. Disclaimer: “Eri” is a fictional persona for demo purposes.",
+  longDesc: `Project Overview
+“Travelling With Eri!!” is a conceptual travel blog created to demonstrate my full-stack web development and design capabilities. Designed as a portfolio piece, it mimics a real-world travel platform with a focus on clean code, responsive layouts, and immersive storytelling through UI.
+
+Key Technical & Design Goals
+
+Front-End Development: Built with semantic HTML5, CSS3 (Flexbox/Grid), and vanilla JavaScript for animations and dynamic content.
+
+Responsive Design: Mobile-first approach with breakpoints optimized for all devices.
+
+CMS Integration: Mock blog posts managed via a decoupled headless CMS (e.g., Sanity.io) for easy content updates.
+
+Performance: Optimized images (WebP format), lazy loading, and minimal dependencies for fast load times.
+
+Design System: Custom color palette, typography (pairing serif and sans-serif fonts), and reusable components (cards, forms, modals).`,
+  image: "/TravelWithErii.PNG",
+  video: "/2.mp4",
+  link: "https://travelwitherii.vercel.app/homepage"
+},
   {
-    title: "Project 1",
+    title: "Verve Digital",
     shortDesc: "Brief description",
     longDesc: "Detailed description of the project...",
-    image: "/1.jpg",
+    image: "/VD.PNG",
     video: "/2.mp4",
-    link: "https://project1.com"
+    link: "https://verve-digital.vercel.app/"
   },
   {
     title: "Project 1",
@@ -41,6 +54,18 @@ const projects = [
 
 export default function Projects() {
   const [selectedId, setSelectedId] = useState(null);
+
+  useEffect(() => {
+    if (selectedId !== null) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+    
+    return () => {
+      document.body.classList.remove('modal-open');
+    };
+  }, [selectedId]);
 
   return (
     <div className={styles.projectsGrid}>
@@ -64,7 +89,7 @@ export default function Projects() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             />
-            <h3>{project.title}</h3>
+            <h3 className={styles.title}>{project.title}</h3>
             <p>{project.shortDesc}</p>
           </motion.div>
         </motion.div>
