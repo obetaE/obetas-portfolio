@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Projects.module.css';
+import Link from 'next/link';
 
 const projects = [
   {
@@ -107,7 +108,7 @@ export default function Projects() {
       {projects.map((project, index) => (
         <motion.div
           key={index}
-          className={styles.gradientBorder}
+          className={`${styles.gradientBorder} ${selectedId !== null && styles.none}`}
           layout
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -166,16 +167,18 @@ export default function Projects() {
                 </div>
 
                 <div className={styles.detailsContainer}>
-                  <h2>{projects[selectedId].title}</h2>
+                  <div className={styles.details}>
+                    <h2>{projects[selectedId].title}</h2>
                   <p>{projects[selectedId].longDesc}</p>
-                  <a
+                  </div>
+                  <Link
                     href={projects[selectedId].link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.projectLink}
                   >
                     Visit Website
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>
