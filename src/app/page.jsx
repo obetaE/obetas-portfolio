@@ -51,7 +51,7 @@ export default function Home() {
       <FaLinkedin size={24} />
     </motion.a>
     <motion.a
-      href="https://x.com/in/yourprofile"
+      href="https://x.com/ObetaEric_Codes"
       aria-label="Visit my X profile"
       target="_blank"
       rel="noopener noreferrer"

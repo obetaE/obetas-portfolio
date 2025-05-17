@@ -80,14 +80,19 @@ const skillCategories = [
 
 const certifications = [
   {
-    name: "AWS Certified Developer",
+    name: "FullStack NextJs Web Developer",
     year: 2023,
-    issuer: "Amazon Web Services"
+    issuer: "LocTech Training Institute"
   },
   {
     name: "React Professional",
-    year: 2022,
-    issuer: "Meta"
+    year: 2023,
+    issuer: "LocTech Training Institute"
+  },
+  {
+    name: "UI UX Designer",
+    year: 2023,
+    issuer: "Bank of Industry"
   },
   // Add more certifications
 ];

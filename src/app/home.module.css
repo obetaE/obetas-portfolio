@@ -39,6 +39,7 @@
   
   .ctaButton:hover {
     transform: translateY(-3px);
+    color: #000000;
   }
   
   .section {

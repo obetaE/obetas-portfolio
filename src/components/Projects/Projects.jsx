@@ -10,7 +10,7 @@ const projects = [
     shortDesc: "A vibrant, modern hotel website built with React and Next.js, featuring an engaging dark theme, interactive sections, and responsive design. It showcases amenities, attractions, and a luxury experience tailored for urban travelers.",
     longDesc: "This is a fully responsive hotel website designed with a bold nightlife-inspired aesthetic, using a deep charcoal background with electric purple and cool blue accents. Built with React and Next.js, it features an elegant user interface optimized for both desktop and mobile devices. The site includes a dynamic Experiences section highlighting the hotel's premium amenities and a visually rich Attractions slider that transitions between local destinations with synchronized content and imagery. Animations and smooth interactions elevate the user experience, while clean, semantic code ensures scalability and performance. From layout to micro-interactions, every element was crafted to convey a sense of style, energy, and comfort — perfect for travelers seeking a modern escape.",
     image: "GammaSuites.PNG",
-    video: "/2.mp4",
+    video: "/Gamma Suites.mp4",
     link: "https://gammasuites.vercel.app/"
   },
   {
@@ -31,7 +31,7 @@ Performance: Optimized images (WebP format), lazy loading, and minimal dependenc
 
 Design System: Custom color palette, typography (pairing serif and sans-serif fonts), and reusable components (cards, forms, modals).`,
   image: "/TravelWithErii.PNG",
-  video: "/2.mp4",
+  video: "/Travel Vlogs.mp4",
   link: "https://travelwitherii.vercel.app/homepage"
 },
   {
@@ -74,7 +74,7 @@ Dynamic meta descriptions using NLP analysis of vintage tracks
 
 Accelerated Mobile Pages (AMP) for low-bandwidth users`,
     image: "/VD.PNG",
-    video: "/2.mp4",
+    video: "/Verve-Digital.mp4",
     link: "https://verve-digital.vercel.app/"
   },
   {
