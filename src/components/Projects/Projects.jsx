@@ -77,14 +77,65 @@ Accelerated Mobile Pages (AMP) for low-bandwidth users`,
     video: "/Verve-Digital.mp4",
     link: "https://verve-digital.vercel.app/"
   },
-  {
-    title: "Project 1",
-    shortDesc: "Brief description",
-    longDesc: "Detailed description of the project...",
-    image: "/1.jpg",
-    video: "/2.mp4",
-    link: "https://project1.com"
-  },
+//   {
+//     title: "Product Connect",
+//     shortDesc: "Product Connect is a revolutionary app bridging farmers and buyers directly, cutting out middlemen to ensure fair pricing and fresh produce. Farmers list crops, buyers negotiate deals in real-time, and transactions are secured through escrow payments. Empower local agriculture, reduce waste, and build trust—all in one platform.",
+//     longDesc: `Product Connect reimagines agricultural trade by creating a seamless, transparent marketplace where farmers and buyers connect directly. Designed to empower both parties, the app eliminates costly intermediaries, allowing farmers to set competitive prices and buyers to negotiate deals tailored to their needs.
+
+// How It Works:
+
+// Farmers List Produce: Upload crops with details like type, quantity, harvest date, and base price.
+
+// Buyers Browse & Negotiate: Search real-time listings, filter by location or crop type, and chat directly with farmers to agree on terms.
+
+// Secure Transactions: Funds are held in escrow until delivery is confirmed, ensuring safety for both sides.
+
+// Build Relationships: Verified profiles and review systems foster trust for repeat partnerships.
+
+// Why It Matters:
+
+// For Farmers:
+
+// Reach broader markets beyond local middlemen.
+
+// Set flexible pricing and negotiate bulk sales.
+
+// Reduce post-harvest waste with timely connections.
+
+// For Buyers:
+
+// Access fresh, traceable produce at fair rates.
+
+// Customize orders (bulk, seasonal) through direct chats.
+
+// Support sustainable farming communities.
+
+// Innovative Features:
+
+// Smart Alerts: Buyers receive notifications for preferred crops.
+
+// Delivery Tracking: Real-time updates from farm to doorstep.
+
+// AI Insights: Farmers get pricing tips based on market trends.
+
+// Impact Beyond Trade:
+// By shortening supply chains, Product Connect cuts carbon footprints, boosts farmer incomes, and ensures fresher food for buyers. Join a movement that’s transforming agriculture—one direct deal at a time.
+
+// Join Today: Where Farms Meet Opportunity. 🌾
+
+// `,
+//     image: "/Harvest.JPG",
+//     video: "/2.mp4",
+//     link: "https://www.figma.com/proto/h25ptX5Wl5FnKSIfM4jY16/Farm-Organisation-Projects?node-id=289-3905&t=4Hy2nvHztGEnLsS3-1&scaling=scale-down&content-scaling=fixed&page-id=4%3A84&starting-point-node-id=289%3A3905"
+//   },
+  // {
+  //   title: "Project 1",
+  //   shortDesc: "Brief description",
+  //   longDesc: "Detailed description of the project...",
+  //   image: "/1.jpg",
+  //   video: "/2.mp4",
+  //   link: "https://project1.com"
+  // },
   // Add more projects
 ];
 
@@ -108,7 +159,9 @@ export default function Projects() {
       {projects.map((project, index) => (
         <motion.div
           key={index}
-          className={`${styles.gradientBorder} ${selectedId !== null && styles.none}`}
+           className={`${styles.gradientBorder} ${
+      selectedId !== null && selectedId !== index ? styles.none : ''
+    }`}
           layout
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -177,7 +230,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className={styles.projectLink}
                   >
-                    Visit Website
+                    Visit Project
                   </Link>
                 </div>
               </div>

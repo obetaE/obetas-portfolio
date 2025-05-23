@@ -6,6 +6,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+   position: relative;
+  min-height: 100vh;
 }
 
 /* Gradient border effect */
@@ -17,10 +19,17 @@
   overflow: hidden;
 }
 
-/* .none{
-  max-height: 100vh;
+.none{
+    height: 0;
   overflow: hidden;
-} */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.projectsGrid:has(.none) {
+  height: 100vh;
+  overflow: hidden;
+}
 
 .gradientBorder::before {
   content: '';
@@ -100,18 +109,18 @@
 
 .projectOverlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+   background: rgba(0, 0, 0, 0.95);
+     width: 100%;
+  max-width: 1600px;
+  height: auto;
+  min-height: 110vh;
+  max-height: 160vh;
   z-index: 2000;
   padding: 1rem;
   cursor: pointer;
-  width: 100%;
   overflow: auto;
 }
 
@@ -119,7 +128,7 @@
   background: var(--secondary-bg);
   width: 100%;
   min-height: 100dvh;
-  max-width: 1400px;
+  max-width: 1600px;
   border-radius: 1rem;
   overflow: hidden;
   position: fixed;
@@ -284,8 +293,9 @@
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
   .expandedProject {
-    height: 100dvh;
+    height: 100vh;
     border-radius: 0;
+    overflow: hidden;
   }
 
   .mediaContainer {
