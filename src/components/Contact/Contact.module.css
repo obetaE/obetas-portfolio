@@ -147,6 +147,43 @@
   color: var(--accent);
 }
 
+.errorMessage {
+  padding: 12px;
+  background: #ffe3e3;
+  color: #c53030;
+  border-radius: 4px;
+  margin-top: 16px;
+  border: 1px solid #ffc9c9;
+  font-size: 0.9rem;
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  /* Optional: prevent hover state styling */
+  background: var(--original-color) !important;
+}
+
+.loadingText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Optional spinner animation */
+.spinner {
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 @media (max-width: 768px) {
   .contactContainer {
     grid-template-columns: 1fr;
