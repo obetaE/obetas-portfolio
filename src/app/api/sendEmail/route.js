@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import nodemailer from "nodemailer"
 
 export async function POST(request) {
   try {
@@ -7,7 +7,7 @@ export async function POST(request) {
     // Validate input
     if (!name || !email || !message) {
       return new Response(
-        JSON.stringify({ error: "All fields are required" }),
+        JSON.stringify({ error: "All fields must be filled" }),
         { status: 400 }
       );
     }

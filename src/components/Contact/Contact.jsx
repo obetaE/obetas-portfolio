@@ -129,7 +129,7 @@ export default function Contact() {
           >
             {loading ? (
               <span className={styles.loadingText}>
-                Sending...
+                Sending Message...
                 <span className={styles.spinner} />
               </span>
             ) : (
