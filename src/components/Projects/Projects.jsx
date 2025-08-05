@@ -1,243 +1,155 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import styles from './Projects.module.css';
 import Link from 'next/link';
+import { 
+  FaReact, FaNodeJs, FaGithub 
+} from 'react-icons/fa';
+import { 
+  SiNextdotjs, SiTypescript, SiTailwindcss,
+  SiJavascript, SiHtml5, SiCss3, SiMongodb, SiExpress
+} from 'react-icons/si';
 
 const projects = [
   {
     title: "Gamma Suites",
-    shortDesc: "A vibrant, modern hotel website built with React and Next.js, featuring an engaging dark theme, interactive sections, and responsive design. It showcases amenities, attractions, and a luxury experience tailored for urban travelers.",
-    longDesc: "This is a fully responsive hotel website designed with a bold nightlife-inspired aesthetic, using a deep charcoal background with electric purple and cool blue accents. Built with React and Next.js, it features an elegant user interface optimized for both desktop and mobile devices. The site includes a dynamic Experiences section highlighting the hotel's premium amenities and a visually rich Attractions slider that transitions between local destinations with synchronized content and imagery. Animations and smooth interactions elevate the user experience, while clean, semantic code ensures scalability and performance. From layout to micro-interactions, every element was crafted to convey a sense of style, energy, and comfort — perfect for travelers seeking a modern escape.",
+    shortDesc: "A vibrant, modern hotel website built with React and Next.js, featuring an engaging dark theme, interactive sections, and responsive design.",
     image: "GammaSuites.PNG",
-    video: "/Gamma Suites.mp4",
-    link: "https://gammasuites.vercel.app/"
+    link: "https://gammasuites.vercel.app/",
+    tech: ['react', 'nextjs', 'javascript', 'tailwind']
   },
   {
-  title: "Travelling With Erii!!",
-  shortDesc: "A fully responsive, custom-designed travel blog built from scratch to showcase modern web development and UI/UX practices. This project features dynamic content loading, SEO optimization, and interactive elements, all wrapped in a wanderlust-inspired aesthetic. Disclaimer: “Eri” is a fictional persona for demo purposes.",
-  longDesc: `Project Overview
-“Travelling With Eri!!” is a conceptual travel blog created to demonstrate my full-stack web development and design capabilities. Designed as a portfolio piece, it mimics a real-world travel platform with a focus on clean code, responsive layouts, and immersive storytelling through UI.
-
-Key Technical & Design Goals
-
-Front-End Development: Built with semantic HTML5, CSS3 (Flexbox/Grid), and vanilla JavaScript for animations and dynamic content.
-
-Responsive Design: Mobile-first approach with breakpoints optimized for all devices.
-
-CMS Integration: Mock blog posts managed via a decoupled headless CMS (e.g., Sanity.io) for easy content updates.
-
-Performance: Optimized images (WebP format), lazy loading, and minimal dependencies for fast load times.
-
-Design System: Custom color palette, typography (pairing serif and sans-serif fonts), and reusable components (cards, forms, modals).`,
-  image: "/TravelWithErii.PNG",
-  video: "/Travel Vlogs.mp4",
-  link: "https://travelwitherii.vercel.app/homepage"
-},
+    title: "Travelling With Erii!!",
+    shortDesc: "A fully responsive, custom-designed travel blog built from scratch to showcase modern web development and UI/UX practices.",
+    image: "/TravelWithErii.PNG",
+    link: "https://travelwitherii.vercel.app/homepage",
+    tech: ['react', 'javascript', 'html', 'tailwind']
+  },
   {
     title: "Verve Digital",
     shortDesc: "Senior-focused music distribution platform combining luxury design with accessibility",
-    longDesc: `Verve Digital: Bridging Generations Through Accessible Music Commerce
-Objective: Create a senior-friendly digital storefront for a classic rock distributor needing to balance luxury branding with accessibility requirements for older users.
-
-Key Features & Solutions:
-
-Age-Inclusive UX Framework
-
-Designed 45% larger tap targets and 18px base font sizes
-
-Implemented dyslexic-friendly typography with adjustable contrast modes
-
-Developed voice navigation compatibility using React Aria
-
-Performance-Optimized Architecture
-
-Achieved 0.3s FCP using Next.js SSG with CDN caching
-
-Reduced JS bundle size by 60% via code splitting
-
-Automated image optimization with AVIF/WebP fallbacks
-
-Senior-First Commerce Features
-
-Built "Call to Order" CTA with click-to-dial functionality
-
-Created guided checkout flows with progress indicators
-
-Integrated trusted payment badges at 200% scaling
-
-SEO/ACCESSIBILITY SYNERGY
-
-Structured data markup for screen readers + search crawlers
-
-Dynamic meta descriptions using NLP analysis of vintage tracks
-
-Accelerated Mobile Pages (AMP) for low-bandwidth users`,
     image: "/VD.PNG",
-    video: "/Verve-Digital.mp4",
-    link: "https://verve-digital.vercel.app/"
+    link: "https://verve-digital.vercel.app/",
+    tech: ['nextjs', 'nodejs', 'mongodb', 'express']
   },
-//   {
-//     title: "Product Connect",
-//     shortDesc: "Product Connect is a revolutionary app bridging farmers and buyers directly, cutting out middlemen to ensure fair pricing and fresh produce. Farmers list crops, buyers negotiate deals in real-time, and transactions are secured through escrow payments. Empower local agriculture, reduce waste, and build trust—all in one platform.",
-//     longDesc: `Product Connect reimagines agricultural trade by creating a seamless, transparent marketplace where farmers and buyers connect directly. Designed to empower both parties, the app eliminates costly intermediaries, allowing farmers to set competitive prices and buyers to negotiate deals tailored to their needs.
-
-// How It Works:
-
-// Farmers List Produce: Upload crops with details like type, quantity, harvest date, and base price.
-
-// Buyers Browse & Negotiate: Search real-time listings, filter by location or crop type, and chat directly with farmers to agree on terms.
-
-// Secure Transactions: Funds are held in escrow until delivery is confirmed, ensuring safety for both sides.
-
-// Build Relationships: Verified profiles and review systems foster trust for repeat partnerships.
-
-// Why It Matters:
-
-// For Farmers:
-
-// Reach broader markets beyond local middlemen.
-
-// Set flexible pricing and negotiate bulk sales.
-
-// Reduce post-harvest waste with timely connections.
-
-// For Buyers:
-
-// Access fresh, traceable produce at fair rates.
-
-// Customize orders (bulk, seasonal) through direct chats.
-
-// Support sustainable farming communities.
-
-// Innovative Features:
-
-// Smart Alerts: Buyers receive notifications for preferred crops.
-
-// Delivery Tracking: Real-time updates from farm to doorstep.
-
-// AI Insights: Farmers get pricing tips based on market trends.
-
-// Impact Beyond Trade:
-// By shortening supply chains, Product Connect cuts carbon footprints, boosts farmer incomes, and ensures fresher food for buyers. Join a movement that’s transforming agriculture—one direct deal at a time.
-
-// Join Today: Where Farms Meet Opportunity. 🌾
-
-// `,
-//     image: "/Harvest.JPG",
-//     video: "/2.mp4",
-//     link: "https://www.figma.com/proto/h25ptX5Wl5FnKSIfM4jY16/Farm-Organisation-Projects?node-id=289-3905&t=4Hy2nvHztGEnLsS3-1&scaling=scale-down&content-scaling=fixed&page-id=4%3A84&starting-point-node-id=289%3A3905"
-//   },
-  // {
-  //   title: "Project 1",
-  //   shortDesc: "Brief description",
-  //   longDesc: "Detailed description of the project...",
-  //   image: "/1.jpg",
-  //   video: "/2.mp4",
-  //   link: "https://project1.com"
-  // },
-  // Add more projects
+  {
+    title: "Soft Roots",
+    shortDesc: "This is a dealer company focused on selling customizable trucks to their users",
+    image: "/softroots.PNG",
+    link: "https://soft-roots.vercel.app/",
+    tech: ['nextjs', 'nodejs', 'mongodb', 'express']
+  },
+  {
+    title: "Aces Week Registration Site",
+    shortDesc: "This is a registration website used to get feedback from an already built in audience for possible expectations for an event",
+    image: "/vol.PNG",
+    link: "https://techfest-three.vercel.app/",
+    tech: ['nextjs', 'nodejs', 'mongodb', 'css']
+  },
+  {
+    title: "TechFest Jam",
+    shortDesc: "This is a live voting platform used to monitor the live votings for an event",
+    image: "/vote.PNG",
+    link: "https://acestech-jam.vercel.app/",
+    tech: ['nextjs', 'nodejs', 'mongodb', 'css']
+  },
 ];
 
-export default function Projects() {
-  const [selectedId, setSelectedId] = useState(null);
+const techIcons = {
+  react: <FaReact className="text-[#61DAFB]" />,
+  nextjs: <SiNextdotjs className="text-white" />,
+  typescript: <SiTypescript className="text-[#3178C6]" />,
+  nodejs: <FaNodeJs className="text-[#68A063]" />,
+  tailwind: <SiTailwindcss className="text-[#38B2AC]" />,
+  javascript: <SiJavascript className="text-[#F7DF1E]" />,
+  html: <SiHtml5 className="text-[#E34F26]" />,
+  css: <SiCss3 className="text-[#1572B6]" />,
+  mongodb: <SiMongodb className="text-[#47A248]" />,
+  express: <SiExpress className="text-white" />,
+};
 
-  useEffect(() => {
-    if (selectedId !== null) {
-      document.body.classList.add('modal-open');
-    } else {
-      document.body.classList.remove('modal-open');
-    }
-    
-    return () => {
-      document.body.classList.remove('modal-open');
-    };
-  }, [selectedId]);
+export default function Projects() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className={styles.projectsGrid}>
-      {projects.map((project, index) => (
-        <motion.div
-          key={index}
-           className={`${styles.gradientBorder} ${
-      selectedId !== null && selectedId !== index ? styles.none : ''
-    }`}
-          layout
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-          whileHover={{ y: -10 }}
-          transition={{ type: "spring", stiffness: 300 }}
-          onClick={() => setSelectedId(index)}
-        >
-          <motion.div className={styles.projectCard}>
-            <motion.img
-              src={project.image}
-              alt={project.title}
-              className={styles.projectImage}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            />
-            <h3 className={styles.title}>{project.title}</h3>
-            <p>{project.shortDesc}</p>
-          </motion.div>
-        </motion.div>
-      ))}
-
-      <AnimatePresence>
-        {selectedId !== null && (
+    <section className={styles.projectsSection}>
+      <div className={styles.projectsGrid}>
+        {projects.map((project, index) => (
           <motion.div
-            className={styles.projectOverlay}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedId(null)}
+            key={index}
+            className={`${styles.projectCard}`}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            whileHover={{ 
+              y: -15,
+              boxShadow: "0 0 25px rgba(0, 255, 136, 0.3)"
+            }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 300,
+              duration: 0.5
+            }}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
-            <motion.div
-              className={styles.expandedProject}
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                className={styles.closeButton}
-                onClick={() => setSelectedId(null)}
-              >
-                &times;
-              </button>
-
-              <div className={styles.projectContent}>
-                <div className={styles.mediaContainer}>
-                  <video
-                    src={projects[selectedId].video}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className={styles.projectVideo}
-                  />
-                </div>
-
-                <div className={styles.detailsContainer}>
-                  <div className={styles.details}>
-                    <h2>{projects[selectedId].title}</h2>
-                  <p>{projects[selectedId].longDesc}</p>
-                  </div>
-                  <Link
-                    href={projects[selectedId].link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.projectLink}
-                  >
-                    Visit Project
-                  </Link>
+            {/* Neon glow effect */}
+            <div className={styles.neonGlow}></div>
+            
+            <div className={styles.cardContent}>
+              <div className={styles.imageContainer}>
+                <motion.img
+                  src={project.image}
+                  alt={project.title}
+                  className={styles.projectImage}
+                  whileHover={{ scale: 1.03 }}
+                />
+              </div>
+              
+              <div className={styles.textContent}>
+                <h3 className={styles.title}>{project.title}</h3>
+                <p className={styles.desc}>{project.shortDesc}</p>
+                
+                <div className={styles.techStack}>
+                  {project.tech.map((tech, i) => (
+                    <motion.span
+                      key={i}
+                      className={styles.techIcon}
+                      whileHover={{ 
+                        scale: 1.2,
+                        filter: "drop-shadow(0 0 6px var(--accent))"
+                      }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {techIcons[tech]}
+                    </motion.span>
+                  ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
+            
+            {/* Hover overlay with button */}
+            {hoveredIndex === index && (
+              <motion.div
+                className={styles.hoverOverlay}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.projectLink}
+                >
+                  Visit Project
+                </Link>
+              </motion.div>
+            )}
           </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+        ))}
+      </div>
+    </section>
   );
 }

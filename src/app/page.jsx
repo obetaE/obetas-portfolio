@@ -90,14 +90,18 @@ export default function Home() {
 
       <section id="projects" className={styles.section}>
       <motion.div className={styles.floating}>
-        <h2 className={styles.sectionTitle}>Projects</h2>
+        <div className={styles.head}>
+          <h2 className={styles.sectionTitle}>Projects</h2>
+        </div>
         <Projects/>
         </motion.div>
       </section>
 
       <section id="skills" className={styles.section}>
         <div className={styles.skills}>
-        <h2 className={styles.sectionTitle}>Skills</h2>
+        <div className={styles.head}>
+          <h2 className={styles.sectionTitle}>Skills</h2>
+        </div>
         <Skills/>
         </div>
       </section>
