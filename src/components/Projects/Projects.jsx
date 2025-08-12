@@ -54,6 +54,13 @@ const projects = [
     link: "https://acestech-jam.vercel.app/",
     tech: ['nextjs', 'nodejs', 'mongodb', 'css']
   },
+  {
+    title: "TechAcademy",
+    shortDesc: "A fully responsive teaching platform with nice designs and nice learning processes",
+    image: "/techa.PNG",
+    link: "https://tech-academy-nine.vercel.app/",
+    tech: ['nextjs', 'nodejs', 'mongodb', 'css']
+  },
 ];
 
 const techIcons = {
