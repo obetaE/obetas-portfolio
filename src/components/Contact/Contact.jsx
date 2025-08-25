@@ -172,7 +172,7 @@ export default function Contact() {
 
             <div className={styles.contactItem}>
               <FaPhone className={styles.contactIcon} />
-              <span>+234 805 102 5661</span>
+              <span>+234 916 595 4684</span>
             </div>
           </div>
 
