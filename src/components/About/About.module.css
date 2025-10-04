@@ -1,0 +1,251 @@
+.about {
+  padding: 6rem 0;
+  background: var(--light-gray);
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.sectionHeader {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--sky-blue), var(--coral));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.bio {
+  margin-bottom: 3rem;
+}
+
+.bio p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.highlighted {
+  background: linear-gradient(135deg, var(--lavender), var(--sky-blue));
+  padding: 1.5rem;
+  border-radius: 15px;
+  color: white !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlighted::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: rotate(45deg);
+}
+
+.highlighted strong {
+  position: relative;
+  z-index: 1;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.stat {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+}
+
+.statIcon {
+  font-size: 2rem;
+  color: var(--coral);
+  margin-bottom: 0.5rem;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 0.25rem;
+  font-family: 'Clash Display', sans-serif;
+}
+
+.statLabel {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.aboutVisual {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.photoPlaceholder {
+  display: flex;
+  justify-content: center;
+}
+
+.photoFrame {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--coral), var(--sky-blue));
+  padding: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.photoContent {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photoBlob {
+  width: 80%;
+  height: 80%;
+  background: linear-gradient(135deg, var(--lavender), var(--sky-blue));
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morph 8s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.skills {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.skillsTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--charcoal);
+  text-align: center;
+}
+
+.skillsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skillName {
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.skillPercentage {
+  font-size: 0.875rem;
+  color: var(--coral);
+  font-weight: 600;
+}
+
+.skillBar {
+  height: 8px;
+  background: var(--light-gray);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skillProgress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--coral), var(--sky-blue));
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+}
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+@media (max-width: 968px) {
+  .aboutContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .photoFrame {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 4rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .skills {
+    padding: 1.5rem;
+  }
+}

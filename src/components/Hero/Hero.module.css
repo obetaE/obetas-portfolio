@@ -1,0 +1,220 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.headline {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--charcoal);
+}
+
+.nameHighlight {
+  color: var(--coral);
+  position: relative;
+  display: inline-block;
+}
+
+.nameHighlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(90deg, transparent, var(--lavender), transparent);
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--coral), var(--sky-blue));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.subheadline {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.primaryCta {
+  background: linear-gradient(135deg, var(--coral), var(--sky-blue));
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 111, 97, 0.3);
+}
+
+.primaryCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 111, 97, 0.4);
+}
+
+.secondaryCta {
+  padding: 1rem 2rem;
+  border: 2px solid var(--lavender);
+  border-radius: 50px;
+  text-decoration: none;
+  color: var(--charcoal);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.secondaryCta:hover {
+  background: var(--lavender);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--light-gray);
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.25rem;
+}
+
+.socialLinks a:hover {
+  background: var(--coral);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.heroVisual {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blob {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--lavender), var(--sky-blue));
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morph 8s ease-in-out infinite;
+  opacity: 0.8;
+  filter: blur(20px);
+}
+
+.floatingElement {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--coral), transparent);
+  animation: float 6s ease-in-out infinite;
+}
+
+.floatingElement:nth-child(2) {
+  top: 20%;
+  left: 10%;
+  background: linear-gradient(135deg, var(--sky-blue), transparent);
+  animation-delay: -2s;
+}
+
+.floatingElement:nth-child(3) {
+  bottom: 20%;
+  right: 10%;
+  background: linear-gradient(135deg, var(--lavender), transparent);
+  animation-delay: -4s;
+}
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@media (max-width: 968px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .headline {
+    font-size: 2.5rem;
+  }
+
+  .heroVisual {
+    height: 300px;
+  }
+
+  .blob {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: 2rem;
+  }
+
+  .ctaContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    width: 100%;
+    justify-content: center;
+  }
+}

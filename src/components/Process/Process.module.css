@@ -1,0 +1,183 @@
+.process {
+  padding: 6rem 0;
+  background: var(--white);
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--lavender), var(--coral));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.processTimeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.processTimeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 60px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--coral), var(--sky-blue), var(--lavender));
+  opacity: 0.3;
+}
+
+.processStep {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.stepIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 2rem;
+  position: relative;
+}
+
+.stepIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  position: relative;
+}
+
+.stepConnector {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--sky-blue), var(--lavender));
+  margin: 1rem 0;
+  opacity: 0.5;
+}
+
+.stepNumber {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  background: var(--light-gray);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+}
+
+.stepContent {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.stepTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--charcoal);
+}
+
+.stepDescription {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.processNote {
+  max-width: 800px;
+  margin: 4rem auto 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--light-gray), #e8f4ff);
+  border-radius: 20px;
+  text-align: center;
+  border-left: 4px solid var(--coral);
+}
+
+.processNote p {
+  margin: 0;
+  color: var(--charcoal);
+  font-size: 1.1rem;
+}
+
+.processNote strong {
+  color: var(--coral);
+}
+
+@media (max-width: 768px) {
+  .processTimeline::before {
+    left: 30px;
+  }
+
+  .stepIndicator {
+    margin-right: 1rem;
+  }
+
+  .stepIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .stepTitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .process {
+    padding: 4rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .processStep {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stepIndicator {
+    flex-direction: row;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    align-items: center;
+  }
+
+  .stepConnector {
+    width: 40px;
+    height: 2px;
+    margin: 0 1rem;
+  }
+
+  .processTimeline::before {
+    display: none;
+  }
+}
