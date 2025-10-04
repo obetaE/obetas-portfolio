@@ -1,13 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
 
 :root {
-  --white: #FFFFFF;
-  --coral: #FF6F61;
-  --sky-blue: #4DA6FF;
-  --lavender: #B28DFF;
-  --light-gray: #F5F5F5;
-  --charcoal: #333333;
+  --primary-bg: #0a0a0a;
+  --secondary-bg: #1a1a1a;
+  --accent: #00ff88;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
 }
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
 
 * {
   margin: 0;
@@ -16,42 +39,25 @@
 }
 
 body {
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
   font-family: 'Inter', sans-serif;
-  color: var(--charcoal);
-  background: var(--white);
-  overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Clash Display', sans-serif;
-  font-weight: 600;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Smooth scrolling */
-html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+section {
+  padding: 4rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--light-gray);
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--coral);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #ff5a4a;
+a:hover {
+  color: var(--accent);
 }
