@@ -19,13 +19,13 @@ const projects = [
     link: "https://gammasuites.vercel.app/",
     tech: ['react', 'nextjs', 'javascript', 'tailwind']
   },
-  {
-    title: "Travelling With Erii!!",
-    shortDesc: "A fully responsive, custom-designed travel blog built from scratch to showcase modern web development and UI/UX practices.",
-    image: "/TravelWithErii.PNG",
-    link: "https://travelwitherii.vercel.app/homepage",
-    tech: ['react', 'javascript', 'html', 'tailwind']
-  },
+  // {
+  //   title: "Travelling With Erii!!",
+  //   shortDesc: "A fully responsive, custom-designed travel blog built from scratch to showcase modern web development and UI/UX practices.",
+  //   image: "/TravelWithErii.PNG",
+  //   link: "https://travelwitherii.vercel.app/homepage",
+  //   tech: ['react', 'javascript', 'html', 'tailwind']
+  // },
   {
     title: "Verve Digital",
     shortDesc: "Senior-focused music distribution platform combining luxury design with accessibility",
