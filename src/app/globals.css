@@ -1,4 +1,4 @@
-/* @import "tailwindcss";
+@import "tailwindcss";
 
 
 @theme inline {
@@ -60,10 +60,10 @@ a {
 
 a:hover {
   color: var(--accent);
-} */
+}
 
 
-@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
   --white: #FFFFFF;
@@ -98,12 +98,12 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 20px;
 }
 
-/* Smooth scrolling */
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -120,3 +120,4 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #ff5a4a;
 }
+ */
