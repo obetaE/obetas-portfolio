@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
     <>
       <nav id="navbar" className={`navbar ${scrolled ? 'nav-scrolled' : ''}`}>
         <div className="nav-container">
-          <a href="#" className="nav-logo" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}>OBETA<span className="accent-dot">.</span></a>
+          <a href="/" className="nav-logo" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}>OBETA<span className="accent-dot">.</span></a>
           <div className="nav-links">
             <button onClick={() => scrollToSection('about')} className="nav-link">About</button>
             <button onClick={() => scrollToSection('projects')} className="nav-link">Projects</button>

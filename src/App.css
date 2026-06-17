@@ -17,6 +17,7 @@ body {
   color: #fff;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* Grain Texture */
@@ -128,6 +129,7 @@ body {
   z-index: 50;
   transition: all 0.3s;
   background: transparent;
+  width: 100%;
 }
 
 .nav-scrolled {
@@ -137,7 +139,7 @@ body {
 }
 
 .nav-container {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -231,6 +233,7 @@ body {
   gap: 2rem;
   transform: translateX(100%);
   transition: transform 0.3s ease;
+  width: 100%;
 }
 
 .mobile-menu.open {

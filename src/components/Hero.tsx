@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
               <div className="image-border"></div>
               <div className="image-glow"></div>
               <div className="image-container">
-                <img src="/port.jpeg" alt="Obeta" className="portrait-img" />
+                <img src="/main.jpeg" alt="Obeta" className="portrait-img" />
                 <div className="image-overlay"></div>
               </div>
               <div className="image-card">
