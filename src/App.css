@@ -1,4 +1,4 @@
-/* App.css - Complete styles */
+/* App.css - Complete responsive styles */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 * {
@@ -93,7 +93,7 @@ body {
 
 .preloader-logo {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
   font-weight: 700;
   letter-spacing: -0.025em;
 }
@@ -141,7 +141,7 @@ body {
 .nav-container {
   max-width: 100%;
   margin: 0 auto;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -155,7 +155,7 @@ body {
 
 .nav-logo {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 3vw, 1.25rem);
   font-weight: 700;
   letter-spacing: -0.025em;
   text-decoration: none;
@@ -274,6 +274,8 @@ body {
 
 /* Hero Section */
 .hero {
+  overflow-x: hidden;
+  width: 100%;
   min-height: 100vh;
   position: relative;
   display: flex;
@@ -284,10 +286,10 @@ body {
   position: absolute;
   top: 25%;
   left: 25%;
-  width: 500px;
-  height: 500px;
+  width: min(500px, 90vw);
+  height: min(500px, 90vw);
   background: rgba(232, 85, 45, 0.05);
-  border-radius: 50%;
+  border-radius: 50%;  
   filter: blur(150px);
   animation: float-glow 8s ease-in-out infinite;
   pointer-events: none;
@@ -297,8 +299,8 @@ body {
   position: absolute;
   bottom: 0;
   right: 25%;
-  width: 300px;
-  height: 300px;
+  width: min(300px, 60vw);
+  height: min(300px, 60vw);
   background: rgba(232, 85, 45, 0.03);
   border-radius: 50%;
   filter: blur(120px);
@@ -306,12 +308,17 @@ body {
 }
 
 .hero-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 6rem 1.5rem 3rem;
   width: 100%;
+  margin: 0 auto;
+  padding: 5rem 1.25rem 3rem;
   position: relative;
   z-index: 1;
+}
+
+@media (min-width: 480px) {
+  .hero-container {
+    padding: 6rem 1.5rem 3rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -374,25 +381,14 @@ body {
 
 .hero-name span {
   display: block;
-  font-size: 3rem;
-}
-
-@media (min-width: 768px) {
-  .hero-name span {
-    font-size: 4.5rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .hero-name span {
-    font-size: 5.5rem;
-  }
+  font-size: clamp(2.5rem, 10vw, 5.5rem);
 }
 
 .hero-title {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .title-line {
@@ -403,14 +399,8 @@ body {
 
 .title-text {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 4vw, 1.25rem);
   color: #d4d4d4;
-}
-
-@media (min-width: 768px) {
-  .title-text {
-    font-size: 1.25rem;
-  }
 }
 
 .accent-text {
@@ -419,15 +409,9 @@ body {
 
 .hero-desc {
   color: #737373;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
   max-width: 28rem;
   line-height: 1.625;
-}
-
-@media (min-width: 768px) {
-  .hero-desc {
-    font-size: 1.125rem;
-  }
 }
 
 .hero-buttons {
@@ -435,6 +419,7 @@ body {
   align-items: center;
   gap: 1rem;
   padding-top: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .btn-primary {
@@ -446,6 +431,7 @@ body {
   border-radius: 9999px;
   text-decoration: none;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .btn-primary:hover {
@@ -462,6 +448,7 @@ body {
   border-radius: 9999px;
   text-decoration: none;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .btn-secondary:hover {
@@ -471,10 +458,12 @@ body {
 
 .hero-image {
   position: relative;
+  max-width: 100%;
 }
 
 .image-wrapper {
   position: relative;
+  width: 100%;
 }
 
 .image-border {
@@ -485,6 +474,7 @@ body {
   height: 100%;
   border: 1px solid rgba(232, 85, 45, 0.15);
   border-radius: 1rem;
+  pointer-events: none;
 }
 
 .image-glow {
@@ -496,6 +486,7 @@ body {
   background: rgba(232, 85, 45, 0.08);
   border-radius: 9999px;
   filter: blur(40px);
+  pointer-events: none;
 }
 
 .image-container {
@@ -503,6 +494,7 @@ body {
   border-radius: 1rem;
   overflow: hidden;
   aspect-ratio: 3 / 4;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -610,11 +602,17 @@ body {
 .tech-stack-header {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .tech-stack-header {
+    padding: 0 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -719,12 +717,18 @@ body {
   }
 }
 
+@media (max-width: 480px) {
+  .about-section {
+    padding: 4rem 0;
+  }
+}
+
 .about-bg-glow {
   position: absolute;
   top: 0;
   right: 0;
-  width: 400px;
-  height: 400px;
+  width: min(400px, 80vw);
+  height: min(400px, 80vw);
   background: rgba(232, 85, 45, 0.03);
   border-radius: 50%;
   filter: blur(150px);
@@ -734,9 +738,15 @@ body {
 .about-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
   position: relative;
   z-index: 1;
+}
+
+@media (min-width: 480px) {
+  .about-container {
+    padding: 0 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -749,7 +759,13 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .section-header {
+    margin-bottom: 4rem;
+  }
 }
 
 .section-number {
@@ -795,29 +811,17 @@ body {
 
 .about-heading {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2rem;
+  font-size: clamp(2rem, 6vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.1;
 }
 
-@media (min-width: 768px) {
-  .about-heading {
-    font-size: 3rem;
-  }
-}
-
 .about-desc {
   color: #a3a3a3;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
   line-height: 1.625;
   max-width: 32rem;
-}
-
-@media (min-width: 768px) {
-  .about-desc {
-    font-size: 1.125rem;
-  }
 }
 
 .about-subdesc {
@@ -853,15 +857,9 @@ body {
 
 .stat-card p:first-child {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: 700;
   color: white;
-}
-
-@media (min-width: 768px) {
-  .stat-card p:first-child {
-    font-size: 2.5rem;
-  }
 }
 
 .stat-label {
@@ -925,6 +923,7 @@ body {
 .projects-section {
   padding: 6rem 0;
   position: relative;
+  overflow-x: hidden;
 }
 
 @media (min-width: 768px) {
@@ -933,12 +932,25 @@ body {
   }
 }
 
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 4rem 0;
+  }
+}
+
+/* Reset col-span-2 on mobile */
+@media (max-width: 767px) {
+  .col-span-2 {
+    grid-column: span 1 !important;
+  }
+}
+
 .projects-bg-glow {
   position: absolute;
   bottom: 25%;
   left: 0;
-  width: 500px;
-  height: 500px;
+  width: min(500px, 90vw);
+  height: min(500px, 90vw);
   background: rgba(232, 85, 45, 0.03);
   border-radius: 50%;
   filter: blur(180px);
@@ -948,7 +960,13 @@ body {
 .projects-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 480px) {
+  .projects-container {
+    padding: 0 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -963,7 +981,13 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .projects-header {
+    margin-bottom: 4rem;
+  }
 }
 
 .project-tabs {
@@ -1035,6 +1059,7 @@ body {
   border-radius: 1rem;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 0; 
 }
 
 .project-card:hover {
@@ -1069,7 +1094,13 @@ body {
 }
 
 .project-info {
-  padding: 1.5rem;
+  padding: 1.25rem;
+}
+
+@media (min-width: 480px) {
+  .project-info {
+    padding: 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1087,17 +1118,11 @@ body {
 
 .project-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.25rem;
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
   font-weight: 600;
   letter-spacing: -0.025em;
   color: white;
   transition: color 0.3s;
-}
-
-@media (min-width: 768px) {
-  .project-title {
-    font-size: 1.5rem;
-  }
 }
 
 .project-card:hover .project-title {
@@ -1153,6 +1178,8 @@ body {
 
 /* Contact Section */
 .contact-section {
+  overflow-x: hidden;
+  width: 100%;
   padding: 6rem 0;
   border-top: 1px solid rgba(64, 64, 64, 0.5);
   position: relative;
@@ -1164,13 +1191,19 @@ body {
   }
 }
 
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 4rem 0;
+  }
+}
+
 .contact-bg-glow {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
+  width: min(600px, 90vw);
+  height: min(600px, 90vw);
   background: rgba(232, 85, 45, 0.04);
   border-radius: 50%;
   filter: blur(200px);
@@ -1180,7 +1213,13 @@ body {
 .contact-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 480px) {
+  .contact-container {
+    padding: 0 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1210,29 +1249,17 @@ body {
 
 .contact-heading {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 7vw, 3.75rem);
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.05;
 }
 
-@media (min-width: 768px) {
-  .contact-heading {
-    font-size: 3.75rem;
-  }
-}
-
 .contact-desc {
   color: #a3a3a3;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
   line-height: 1.625;
   max-width: 28rem;
-}
-
-@media (min-width: 768px) {
-  .contact-desc {
-    font-size: 1.125rem;
-  }
 }
 
 .contact-email {
@@ -1261,6 +1288,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: border-color 0.3s;
+  flex-shrink: 0;
 }
 
 .email-link:hover .email-icon {
@@ -1269,14 +1297,9 @@ body {
 
 .email-address {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 3vw, 1.25rem);
   font-weight: 500;
-}
-
-@media (min-width: 768px) {
-  .email-address {
-    font-size: 1.25rem;
-  }
+  word-break: break-all;
 }
 
 .contact-social {
@@ -1287,10 +1310,16 @@ body {
   background: #111111;
   border: 1px solid rgba(64, 64, 64, 0.8);
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+@media (min-width: 480px) {
+  .social-card {
+    padding: 2rem;
+  }
 }
 
 .social-label {
@@ -1331,6 +1360,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: border-color 0.3s;
+  flex-shrink: 0;
 }
 
 .social-link:hover .social-icon {
@@ -1385,7 +1415,13 @@ body {
 .footer-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 480px) {
+  .footer-container {
+    padding: 0 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1476,22 +1512,28 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 3rem 1.5rem;
   background: #111111;
   border: 1px solid rgba(64, 64, 64, 0.8);
   border-radius: 1.5rem;
   transition: all 0.3s ease;
 }
 
+@media (min-width: 768px) {
+  .empty-state {
+    padding: 4rem 2rem;
+  }
+}
+
 .empty-state-icon {
-  font-size: 4rem;
+  font-size: clamp(3rem, 10vw, 4rem);
   margin-bottom: 1rem;
   opacity: 0.7;
 }
 
 .empty-state-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
   font-weight: 600;
   color: #e0e0e0;
   margin-bottom: 0.5rem;

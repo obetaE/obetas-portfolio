@@ -54,22 +54,22 @@ const projects: Record<string, Project[]> = {
     }
   ],
   apps: [
-    { 
-      title: 'FitPulse', 
-      desc: 'Cross-platform fitness tracker with social features, AI workout plans, and real-time progress sync.', 
-      tags: ['React Native', 'Expo', 'Node.js', 'Firebase'], 
-      img: 'https://picsum.photos/seed/fit-pulse-ob/800/600.jpg',
-      link: '#'
-    }
+    // { 
+    //   title: 'FitPulse', 
+    //   desc: 'Cross-platform fitness tracker with social features, AI workout plans, and real-time progress sync.', 
+    //   tags: ['React Native', 'Expo', 'Node.js', 'Firebase'], 
+    //   img: 'https://picsum.photos/seed/fit-pulse-ob/800/600.jpg',
+    //   link: '#'
+    // }
   ],
   uiux: [
-    { 
-      title: 'NeoBank', 
-      desc: 'Complete mobile banking redesign focusing on accessibility, intuitive navigation, and trust.', 
-      tags: ['Figma', 'Prototyping', 'Design System', 'User Research'], 
-      img: 'https://picsum.photos/seed/bank-neo-ob/800/600.jpg',
-      link: '#'
-    }
+    // { 
+    //   title: 'NeoBank', 
+    //   desc: 'Complete mobile banking redesign focusing on accessibility, intuitive navigation, and trust.', 
+    //   tags: ['Figma', 'Prototyping', 'Design System', 'User Research'], 
+    //   img: 'https://picsum.photos/seed/bank-neo-ob/800/600.jpg',
+    //   link: '#'
+    // }
   ]
 };
 
