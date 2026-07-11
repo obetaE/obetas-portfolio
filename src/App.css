@@ -604,6 +604,12 @@ body {
   max-width: 100%;
 }
 
+@media (max-width: 720px) {
+  .hero-image {
+    display: none;
+  }
+}
+
 .image-wrapper {
   position: relative;
   width: 100%;
