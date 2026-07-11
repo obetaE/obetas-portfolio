@@ -219,57 +219,128 @@ body {
   }
 }
 
-/* Mobile Menu */
-.mobile-menu {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  background: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(20px);
+/* ---- New Mobile Dropdown (replaces old full‑screen menu) ---- */
+.mobile-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 49;
+  background: radial-gradient(ellipse at top, rgba(232, 85, 45, 0.06) 0%, transparent 70%), 
+              rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.3s ease,
+              transform 0.3s ease;
+  transform: translateY(-10px);
+  pointer-events: none;
+  
+  /* Only show on mobile */
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-dropdown {
+    display: block;
+  }
+}
+
+.mobile-dropdown.open {
+  max-height: 400px; /* Enough for the links */
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-container {
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual link - tech neon vibe */
+.mobile-link-new {
+  display: block;
   width: 100%;
-}
-
-.mobile-menu.open {
-  transform: translateX(0);
-}
-
-.mobile-menu-close {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  padding: 1rem 0;
   background: none;
   border: none;
-  color: white;
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.mobile-link {
-  background: none;
-  border: none;
-  font-size: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Faint grey neon line */
   font-family: 'Space Grotesk', sans-serif;
-  color: white;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #a3a3a3;
+  text-align: left;
   cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.mobile-cta {
-  margin-top: 1rem;
+.mobile-link-new:last-of-type {
+  border-bottom: none;
+}
+
+.mobile-link-new:hover {
+  color: #E8552D;
+  text-shadow: 0 0 12px rgba(232, 85, 45, 0.5); /* Orange glowing tint */
+  border-bottom-color: rgba(232, 85, 45, 0.4);
+  background: rgba(232, 85, 45, 0.03);
+  padding-left: 0.5rem; /* Subtle indent on hover */
+}
+
+/* CTA button in dropdown */
+.mobile-cta-new {
+  display: block;
+  margin-top: 1.5rem;
   background: #E8552D;
   color: white;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 0.875rem;
-  font-weight: 500;
-  padding: 0.75rem 2rem;
+  font-weight: 600;
+  padding: 0.875rem;
   border-radius: 9999px;
   border: none;
   cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.mobile-cta-new:hover {
+  background: #FF6B35;
+  box-shadow: 0 0 20px rgba(232, 85, 45, 0.3);
+}
+
+/* ---- Overlay to blur website background ---- */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 48;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hide overlay on desktop */
+@media (min-width: 768px) {
+  .menu-overlay {
+    display: none;
+  }
 }
 
 /* Hero Section */
