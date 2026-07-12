@@ -63,13 +63,13 @@ const projects: Record<string, Project[]> = {
     // }
   ],
   uiux: [
-    // { 
-    //   title: 'NeoBank', 
-    //   desc: 'Complete mobile banking redesign focusing on accessibility, intuitive navigation, and trust.', 
-    //   tags: ['Figma', 'Prototyping', 'Design System', 'User Research'], 
-    //   img: 'https://picsum.photos/seed/bank-neo-ob/800/600.jpg',
-    //   link: '#'
-    // }
+    { 
+      title: 'Averly Haven', 
+      desc: 'Mobile app design for Averly Haven, a seamless wedding and event planning platform connecting users with vendors, venues, and stress-free deposit workflows.', 
+      tags: ['Figma', 'Mobile App', 'User Flow', 'Prototyping'], 
+      img: '/haven.png',
+      link: 'https://www.figma.com/proto/ppuHpXjVRwTffjSf5qeVfd/WEDDING-CREATIVES?node-id=445-1733&p=f&t=tDMO9aeHLgDQcX3z-0&scaling=scale-down&content-scaling=fixed&page-id=1%3A3&starting-point-node-id=445%3A1713&show-proto-sidebar=1'
+    }
   ]
 };
 
