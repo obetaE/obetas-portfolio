@@ -5,11 +5,18 @@ interface Project {
   desc: string;
   tags: string[];
   img: string;
-  link?: string; // added optional link field
+  link?: string; 
 }
 
 const projects: Record<string, Project[]> = {
   websites: [
+    {
+      title: "VeriMart Nigeria",
+      desc: "A premium, verification-first e-commerce marketplace built to tackle digital commerce trust deficits. Features interactive buyer/seller portals, mock escrow payment workflows, a real-time product comparison engine, and a simulated AI-assisted product authenticity scanner.",
+      tags: ["React", "Next.js", "Tailwind CSS", "Figma"],
+      img: "/verimart.png", 
+      link: "https://verimart-inky.vercel.app/", 
+    },
     {
       title: "Gamma Suites",
       desc: "A vibrant, modern hotel website built with React and Next.js, featuring an engaging dark theme, interactive sections, and responsive design.",

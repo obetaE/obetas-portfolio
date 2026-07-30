@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 
 // 1. Create a pool of images representing projects, anime, novels, photography, art.
 const IMAGE_POOL = [
-  'https://images.unsplash.com/photo-1542224566-6e85f2e6772f?w=800&h=600&fit=crop', // Photography
-  'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=800&h=600&fit=crop', // Art
-  'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=600&fit=crop', // Portrait/Person
-  'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=600&fit=crop', // Nature/Night
-  'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=800&h=600&fit=crop', // Urban
-  'https://images.unsplash.com/photo-1618331835717-801e976710b2?w=800&h=600&fit=crop', // Architecture/Photography
-  'https://images.unsplash.com/photo-1541562232579-51fca3bb941b?w=800&h=600&fit=crop', // Art/Abstract
-  'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&h=600&fit=crop', // Books/Novel
+  'https://images.unsplash.com/photo-1542224566-6e85f2e6772f?w=800&h=600&fit=crop', // Photography..
+  'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=800&h=600&fit=crop', // Art..
+  'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRlY2h8ZW58MHx8MHx8fDA%3D', //Tech
+  'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=600&fit=crop', // Nature/Night..
+  'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=800&h=600&fit=crop', // Urban..
+  'https://images.unsplash.com/photo-1618331835717-801e976710b2?w=800&h=600&fit=crop', // Architecture/Photography..
+  '/verimart.png', 
+  'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&h=600&fit=crop', // Books/Novel..
   'https://images.unsplash.com/photo-1560972550-aba3456b5564?w=800&h=600&fit=crop', // Tech/Product Design
   'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&h=600&fit=crop', // Anime aesthetic/Spirited away style
   'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=600&fit=crop', // Paint/Art
