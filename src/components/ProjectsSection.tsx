@@ -13,7 +13,7 @@ const projects: Record<string, Project[]> = {
     {
       title: "VeriMart Nigeria",
       desc: "A premium, verification-first e-commerce marketplace built to tackle digital commerce trust deficits. Features interactive buyer/seller portals, mock escrow payment workflows, a real-time product comparison engine, and a simulated AI-assisted product authenticity scanner.",
-      tags: ["React", "Next.js", "Tailwind CSS", "Figma"],
+      tags: ["React", "TanStack", "Tailwind CSS", "Figma"],
       img: "/verimart.png", 
       link: "https://verimart-inky.vercel.app/", 
     },
