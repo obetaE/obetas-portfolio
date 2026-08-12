@@ -1,0 +1,29 @@
+/* ==================================================================
+   App.css — stylesheet manifest
+
+   This file only imports. Every rule lives in a module next to it,
+   named after the component or page it styles. Add a new module here
+   at the bottom so later files can override earlier ones.
+
+   Load order matters:
+     base            resets and globals
+     components      one file per component, in page order
+     case-study      the /uiux/:slug page
+     coming-soon     last, so it can override project card styles
+   ================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import './base.css';
+
+@import './preloader.css';
+@import './navbar.css';
+@import './hero.css';
+@import './tech-stack.css';
+@import './about.css';
+@import './projects.css';
+@import './contact.css';
+@import './footer.css';
+
+@import './case-study.css';
+@import './coming-soon.css';

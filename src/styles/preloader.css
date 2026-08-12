@@ -1,0 +1,44 @@
+/* ==================================================================
+   Preloader (src/components/Preloader.tsx)
+   ================================================================== */
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #0A0A0A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s;
+}
+
+.preloader-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.accent-dot {
+  color: #E8552D;
+}
+
+.preloader-bar-container {
+  margin-top: 1.25rem;
+  width: 9rem;
+  height: 2px;
+  background: #222;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.preloader-bar {
+  height: 100%;
+  background: #E8552D;
+  border-radius: 9999px;
+  animation: loading-bar 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

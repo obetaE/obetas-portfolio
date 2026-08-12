@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -12,11 +13,22 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
+
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      // Update the URL hash without triggering a full page refresh
+      window.history.pushState(null, '', `/#${id}`);
+    } else if (pathname !== '/') {
+      // On a sub-page (e.g. a case study) the section does not exist yet, so
+      // navigate home and let ScrollToTop scroll to the hash once it mounts.
+      navigate(`/#${id}`);
     }
+
     setMobileMenuOpen(false);
   };
 
@@ -28,13 +40,13 @@ const Navbar: React.FC = () => {
     <>
       <nav id="navbar" className={`navbar ${scrolled ? 'nav-scrolled' : ''}`}>
         <div className="nav-container">
-          <a href="/" className="nav-logo" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}>OBETA<span className="accent-dot">.</span></a>
+          <Link to="/" className="nav-logo" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}>OBETA<span className="accent-dot">.</span></Link>
           
           <div className="nav-links">
-            <button onClick={() => scrollToSection('about')} className="nav-link">About</button>
-            <button onClick={() => scrollToSection('projects')} className="nav-link">Projects</button>
-            <button onClick={() => scrollToSection('contact')} className="nav-link">Contact</button>
-            <button onClick={() => scrollToSection('contact')} className="nav-cta">Let's Talk</button>
+            <Link to="/#about" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</Link>
+            <Link to="/#projects" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</Link>
+            <Link to="/#contact" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</Link>
+            <Link to="/#contact" className="nav-cta" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Let's Talk</Link>
           </div>
 
           <button 
@@ -63,10 +75,10 @@ const Navbar: React.FC = () => {
         {/* New mobile dropdown (only visible on small screens) */}
         <div className={`mobile-dropdown ${mobileMenuOpen ? 'open' : ''}`}>
           <div className="dropdown-container">
-            <button onClick={() => scrollToSection('about')} className="mobile-link-new">About</button>
-            <button onClick={() => scrollToSection('projects')} className="mobile-link-new">Projects</button>
-            <button onClick={() => scrollToSection('contact')} className="mobile-link-new">Contact</button>
-            <button onClick={() => scrollToSection('contact')} className="mobile-cta-new">Let's Talk</button>
+            <Link to="/#about" className="mobile-link-new" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</Link>
+            <Link to="/#projects" className="mobile-link-new" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</Link>
+            <Link to="/#contact" className="mobile-link-new" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</Link>
+            <Link to="/#contact" className="mobile-cta-new" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Let's Talk</Link>
           </div>
         </div>
       </nav>

@@ -1,0 +1,108 @@
+/* ==================================================================
+   Coming Soon card and panel (src/components/ComingSoonCard.tsx)
+   ================================================================== */
+
+/* Disabled state for 'Coming soon' */
+.project-arrow-disabled {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+.project-card.project-card-soon {
+  cursor: default;
+}
+
+/* Specificity is deliberately raised here so the card stays inert on hover
+   even though .project-card:hover is also defined in index.css. */
+.project-card.project-card-soon:hover {
+  transform: none;
+  border-color: rgba(64, 64, 64, 0.8);
+}
+
+.project-card.project-card-soon:hover .project-title {
+  color: #fff;
+}
+
+.project-card.project-card-soon:hover .project-img {
+  transform: none;
+}
+
+.project-card-soon .project-image {
+  position: relative;
+}
+
+.project-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0) 0 0 / 22px 22px,
+    #151515;
+}
+
+.coming-soon-veil {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.66);
+  backdrop-filter: blur(3px);
+}
+
+.coming-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #E8552D;
+  background: rgba(232, 85, 45, 0.1);
+  border: 1px solid rgba(232, 85, 45, 0.4);
+  border-radius: 9999px;
+  padding: 0.45rem 0.95rem;
+}
+
+.coming-soon-note {
+  font-size: 0.8125rem;
+  color: #E8552D;
+  margin-top: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.coming-soon-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #111111;
+  border: 1px solid rgba(64, 64, 64, 0.8);
+  border-radius: 1.25rem;
+  padding: 2.5rem 1.75rem;
+  max-width: 44rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .coming-soon-panel {
+    padding: 3.5rem 3rem;
+  }
+}
+
+.coming-soon-panel .cs-actions {
+  justify-content: flex-start;
+}
+
+.coming-soon-tags {
+  margin-top: 1.5rem;
+}
