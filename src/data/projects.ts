@@ -70,18 +70,19 @@ const websites: Project[] = [
 ];
 
 const apps: Project[] = [
-  // Add mobile / cross-platform builds here.
-  //
-  // Set `ready: false` on anything still in progress and it renders as a
-  // Coming Soon card:
-  //
   // {
-  //   title: 'FitPulse',
-  //   desc: 'Cross-platform fitness tracker with social features and AI workout plans.',
-  //   tags: ['React Native', 'Expo', 'Node.js', 'Firebase'],
-  //   img: '/fitpulse.png',
+  //   title: 'StrideHub',
+  //   desc:
+  //     'A footwear-focused e-commerce mobile app connecting Nigerian shoppers to authentic, well-fitted shoes ' +
+  //     'through a hybrid retail-and-marketplace model. Features a "Verified Authentic" badge and inspection ' +
+  //     'workflow to combat counterfeit goods, a size-and-fit guide to cut return rates, multiple payment options ' +
+  //     '(card, transfer, mobile money, pay-on-delivery, instalment), order tracking, and a dedicated onboarding ' +
+  //     'path for local shoemakers and artisan clusters like Aba leather producers to sell directly to customers.',
+  //   tags: ['React Native', 'Expo', 'TypeScript', 'Node.js'],
+  //   img: '/stridehub.png',
   //   ready: false,
   //   comingSoonNote: 'In development — launching soon.',
+
   // },
 ];
 

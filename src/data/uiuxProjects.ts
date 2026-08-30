@@ -324,7 +324,16 @@ export const uiuxProjects: UIUXProject[] = [
 
     figmaLink: null,
   },
-
+ {
+  slug: 'stridehub',
+  title: 'StrideHub',
+  desc: 'A footwear-focused e-commerce mobile app connecting Nigerian shoppers to authentic, well-fitted shoes...',
+  tags: ['Figma', 'Mobile App'],
+  cover: '/StripeHub/StripeHub.png',
+  ready: false,
+  comingSoonNote: 'Case study in progress — available on request.',
+  screenshots: [],
+},
   /* ------------------------------------------------------------------
    * Coming Soon template — copy this block for a project whose case
    * study is not written yet. `ready: false` renders the Coming Soon
