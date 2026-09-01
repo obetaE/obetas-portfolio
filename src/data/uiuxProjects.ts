@@ -331,7 +331,7 @@ export const uiuxProjects: UIUXProject[] = [
   tags: ['Figma', 'Mobile App'],
   cover: '/StripeHub/StripeHub.png',
   ready: false,
-  comingSoonNote: 'Case study in progress — available on request.',
+  comingSoonNote: 'Full case study dropping soon — the fit-and-trust problem in Nigerian footwear e-commerce turned out to be a fascinating design challenge.',
   screenshots: [],
 },
   /* ------------------------------------------------------------------
