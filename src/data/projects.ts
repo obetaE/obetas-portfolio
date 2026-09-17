@@ -70,6 +70,16 @@ const websites: Project[] = [
 ];
 
 const apps: Project[] = [
+  {
+    title: 'Scenewise',
+    desc:
+      'A spoiler-free movie companion for Android. A 30-second mood quiz, live TMDB search, where-to-stream ' +
+      'data, and likes, shelves and reviews with no sign-up — backed by an Express + MongoDB API on Render.',
+    tags: ['React Native', 'Expo', 'TypeScript', 'Express', 'MongoDB'],
+    img: '/scenewise/cover.jpg',
+    link: '/apps/scenewise',
+    featured: true,
+  },
   // {
   //   title: 'StrideHub',
   //   desc:

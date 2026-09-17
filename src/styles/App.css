@@ -9,10 +9,12 @@
      base            resets and globals
      components      one file per component, in page order
      case-study      the /uiux/:slug page
+     mobile-app      the /apps/scenewise page
      coming-soon     last, so it can override project card styles
    ================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
 
 @import './base.css';
 
@@ -26,4 +28,5 @@
 @import './footer.css';
 
 @import './case-study.css';
+@import './mobile-app.css';
 @import './coming-soon.css';
