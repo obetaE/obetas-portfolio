@@ -1,5 +1,6 @@
 import type { Project, ProjectCategory } from '../types';
 import { uiuxProjects } from './uiuxProjects';
+import { mobileApps } from './mobileApps';
 
 /**
  * Cards shown in the "Selected Work" section of the home page.
@@ -69,32 +70,16 @@ const websites: Project[] = [
   },
 ];
 
-const apps: Project[] = [
-  {
-    title: 'Scenewise',
-    desc:
-      'A spoiler-free movie companion for Android. A 30-second mood quiz, live TMDB search, where-to-stream ' +
-      'data, and likes, shelves and reviews with no sign-up — backed by an Express + MongoDB API on Render.',
-    tags: ['React Native', 'Expo', 'TypeScript', 'Express', 'MongoDB'],
-    img: '/scenewise/cover.jpg',
-    link: '/apps/scenewise',
-    featured: true,
-  },
-  // {
-  //   title: 'StrideHub',
-  //   desc:
-  //     'A footwear-focused e-commerce mobile app connecting Nigerian shoppers to authentic, well-fitted shoes ' +
-  //     'through a hybrid retail-and-marketplace model. Features a "Verified Authentic" badge and inspection ' +
-  //     'workflow to combat counterfeit goods, a size-and-fit guide to cut return rates, multiple payment options ' +
-  //     '(card, transfer, mobile money, pay-on-delivery, instalment), order tracking, and a dedicated onboarding ' +
-  //     'path for local shoemakers and artisan clusters like Aba leather producers to sell directly to customers.',
-  //   tags: ['React Native', 'Expo', 'TypeScript', 'Node.js'],
-  //   img: '/stridehub.png',
-  //   ready: false,
-  //   comingSoonNote: 'In development — launching soon.',
-
-  // },
-];
+const apps: Project[] = mobileApps.map((app) => ({
+  title: app.title,
+  desc: app.desc,
+  tags: app.tags ?? [],
+  img: app.cover ?? '',
+  link: `/apps/${app.slug}`,
+  ready: app.ready,
+  featured: app.featured,
+  comingSoonNote: app.comingSoonNote,
+}));
 
 /** UI/UX cards, derived from the case study data so nothing is duplicated. */
 const uiux: Project[] = uiuxProjects.map((project) => ({

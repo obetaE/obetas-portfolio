@@ -5,7 +5,7 @@ import Preloader from './components/Preloader';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import UIUXCaseStudyPage from './pages/UIUXCaseStudyPage';
-import MobileApp from './pages/MobileApp';
+import MobileAppCaseStudyPage from './pages/MobileAppCaseStudyPage';
 
 const App: React.FC = () => {
   const [preloaderVisible, setPreloaderVisible] = useState(true);
@@ -38,8 +38,8 @@ const App: React.FC = () => {
         {/* UI/UX case study — resolves the project from the URL slug */}
         <Route path="/uiux/:slug" element={<UIUXCaseStudyPage />} />
 
-        {/* Mobile app case study */}
-        <Route path="/apps/scenewise" element={<MobileApp />} />
+        {/* Mobile app case studies resolve their content from the slug */}
+        <Route path="/apps/:slug" element={<MobileAppCaseStudyPage />} />
 
         {/* Anything else falls through to the case study page's 404 state */}
         <Route path="*" element={<UIUXCaseStudyPage />} />

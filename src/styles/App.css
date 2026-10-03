@@ -9,7 +9,7 @@
      base            resets and globals
      components      one file per component, in page order
      case-study      the /uiux/:slug page
-     mobile-app      the /apps/scenewise page
+    mobile-app      the /apps/:slug case-study pages
      coming-soon     last, so it can override project card styles
    ================================================================== */
 

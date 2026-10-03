@@ -9,6 +9,8 @@
 /* General projects (Websites / Apps / UI-UX cards on the home page)   */
 /* ------------------------------------------------------------------ */
 
+import type { ReactNode } from 'react';
+
 export type ProjectCategory = 'websites' | 'apps' | 'uiux';
 
 export interface Project {
@@ -120,4 +122,125 @@ export interface UIUXProject {
   figmaLink?: string | null;
   /** Live prototype or public preview, if there is one. */
   link?: string;
+}
+
+
+/* ---------------- Existing UIUXProject types stay above ---------------- */
+
+/* ---------------- Mobile app types ---------------- */
+
+export interface MobileAppMeta {
+  label: string;
+  value: string;
+}
+
+export interface MobileAppHeroScreen {
+  position: 'left' | 'center' | 'right';
+  label: string;
+  screen: ReactNode;
+}
+
+export interface MobileAppFeature {
+  screen: ReactNode;
+  label: string;       // aria-label for the phone
+  kicker: string;      // e.g. 'Discover'
+  title: string;
+  desc: string;
+  points: string[];
+  chips: string[];
+}
+
+export interface MobileAppType {
+  role: string;             // 'Display · Serif'
+  name: string;             // 'Fraunces'
+  weights?: string;
+  usage: string;
+  fontClassName: string;    // 'sw-fraunces' | 'sw-jakarta' (or your own)
+  sample?: string;          // short sample e.g. 'Aa'
+  alphabet?: string;        // long sample, lines separated by '\n'
+}
+
+export interface MobileAppPalette {
+  name: string;
+  hex: string;
+}
+
+/** One step in the architecture diagram. */
+export type MobileAppArchItem =
+  | { type: 'node'; small?: string; title: string; desc: string; core?: boolean }
+  | { type: 'link'; label: string }
+  | { type: 'group'; nodes: { title: string; desc: string }[] };
+
+export interface MobileAppDecision {
+  title: string;
+  desc: string;
+}
+
+export interface MobileAppProject {
+  slug: string;
+  title: string;
+  /** Card cover image path relative to /public. */
+  cover?: string;
+  logo?: string;
+  tagline?: string;
+  desc: string;
+
+  /** false → Coming Soon panel instead of the full case study. */
+  ready: boolean;
+  featured?: boolean;
+  comingSoonNote?: string;
+  tags?: string[];      // shown on the Coming Soon panel
+
+  /* Links */
+  installUrl?: string;
+  installLabel?: string;
+  apiUrl?: string;
+  apiLabel?: string;
+
+  /* Hero */
+  heroScreens?: MobileAppHeroScreen[];
+
+  /* Meta strip */
+  meta?: MobileAppMeta[];
+
+  /* 01 Overview */
+  overview?: {
+    problem: string[];   // one string per paragraph
+    response: string[];
+  };
+
+  /* 02 Key screens */
+  featuresNote?: string;
+  features?: MobileAppFeature[];
+
+  /* 03 Visual system */
+  visualSystem?: {
+    types?: MobileAppType[];
+    palette?: MobileAppPalette[];
+    note?: string;
+  };
+
+  /* 04 Architecture */
+  architecture?: {
+    ariaLabel: string;
+    flow: MobileAppArchItem[];
+    decisions?: MobileAppDecision[];
+  };
+
+  /* 05 Stack */
+  stack?: string[];
+
+  /* 06 Outcome */
+  outcome?: {
+    shippedTitle?: string;
+    nextTitle?: string;
+    shipped: string[];
+    nextSteps: string[];
+  };
+
+  /* CTA */
+  cta?: {
+    title: string;
+    desc: string;
+  };
 }

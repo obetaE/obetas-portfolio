@@ -5,8 +5,8 @@ import React from 'react';
  * (scenewise-expo/app/**) and design tokens (tailwind.config.js), so the
  * case study can show the product without static screenshots.
  *
- * Everything is sized for a 300 × 650 screen; <Phone> scales the whole
- * device with a CSS variable, so the screens never need their own breakpoints.
+ * Screen content is sized for a 300 × 650 viewport. The shared Phone component
+ * owns the reusable device frame and scales it without screen-specific breakpoints.
  */
 
 const POSTERS = [1, 2, 3, 4, 5].map((n) => `/scenewise/poster-${n}.jpg`);
@@ -151,33 +151,6 @@ const RowCard: React.FC<{ poster: string; title: string; meta: string; tag?: str
       {tag && <span className="sw-tag">{tag}</span>}
     </div>
     {score != null && <MatchRing value={score} size={34} />}
-  </div>
-);
-
-/* ------------------------------------------------------------------ */
-/* Device                                                              */
-/* ------------------------------------------------------------------ */
-
-/**
- * Device frame. `scale` shrinks the whole phone while keeping its layout box
- * in sync, so surrounding content flows around the scaled size.
- */
-export const Phone: React.FC<{ children: React.ReactNode; label: string; className?: string; scale?: number }> = ({
-  children,
-  label,
-  className = '',
-  scale,
-}) => (
-  <div
-    className={`sw-phone-wrap ${className}`}
-    style={scale ? ({ '--sw-scale': scale } as React.CSSProperties) : undefined}
-    role="img"
-    aria-label={label}
-  >
-    <div className="sw-phone">
-      <div className="sw-screen">{children}</div>
-      <div className="sw-island" />
-    </div>
   </div>
 );
 
