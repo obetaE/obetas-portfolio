@@ -334,6 +334,16 @@ export const uiuxProjects: UIUXProject[] = [
   comingSoonNote: 'Full case study dropping soon — the fit-and-trust problem in Nigerian footwear e-commerce turned out to be a fascinating design challenge.',
   screenshots: [],
 },
+ {
+      slug: 'NorthBound',
+      title: 'NorthBound',
+      desc: 'Northbound is a thoughtful editorial space exploring ideas around work, learning, culture, technology, and the way we think — through essays written to encourage deeper understanding and reflection.',
+      tags: ['Figma', 'Mobile App'],
+      cover: '/NorthBound/cover.png',
+      ready: false,
+      comingSoonNote: 'Case study in progress — available on request.',
+      screenshots: [],
+    },
   /* ------------------------------------------------------------------
    * Coming Soon template — copy this block for a project whose case
    * study is not written yet. `ready: false` renders the Coming Soon
