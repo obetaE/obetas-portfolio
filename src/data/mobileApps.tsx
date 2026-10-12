@@ -6,6 +6,14 @@ import {
   ProfileScreen,
   QuizScreen,
 } from '../components/scenewise/PhoneScreens';
+import {
+  CartScreen as RustBucketCartScreen,
+  CheckoutScreen as RustBucketCheckoutScreen,
+  ProductScreen as RustBucketProductScreen,
+  ProfileScreen as RustBucketProfileScreen,
+  ShopScreen as RustBucketShopScreen,
+  SupportScreen as RustBucketSupportScreen,
+} from '../components/rustbucket/PhoneScreens';
 
 /**
  * Mobile app case studies.
@@ -291,10 +299,248 @@ export const mobileApps: MobileAppProject[] = [
     title: 'Rust Bucket',
     cover: '/rust-bucket/cover.png',
     tagline: 'Technology with staying power.',
-    desc: 'A full-stack e-commerce mobile app for a fictional gadget and audio shop — React Native (Expo) on the front, Express + MongoDB on the back, built end to end.',
-    ready: false,
-    comingSoonNote: 'Case study dropping soon — screenshots and write-up in progress.',
-    tags: ['React Native', 'Expo'],
+    desc:
+      'A full-stack mobile storefront for thoughtfully built tech and audio gear. Rust Bucket brings ' +
+      'product discovery, saved favourites, a shared shopping bag, customer care and order history ' +
+      'into one warm, considered shopping experience.',
+    ready: true,
+    featured: true,
+
+    installUrl:
+      'https://expo.dev/artifacts/eas/u6fkfmnnZQ59eO648hri2H4Hc380IDNQDNVJ5xTt-90.aab',
+    installLabel: 'Download Android AAB',
+
+    heroScreens: [
+      { position: 'left', label: 'Forge H1 product detail', screen: <RustBucketProductScreen /> },
+      { position: 'center', label: 'Rust Bucket shop', screen: <RustBucketShopScreen /> },
+      { position: 'right', label: 'Rust Bucket profile and orders', screen: <RustBucketProfileScreen /> },
+    ],
+
+    meta: [
+      { label: 'Role', value: 'Solo — design, mobile & API' },
+      { label: 'Platform', value: 'Android · iOS · Expo' },
+      { label: 'Stack', value: 'React Native · Express · MongoDB' },
+      { label: 'Commerce', value: 'Catalogue · Bag · Checkout' },
+      { label: 'Support', value: 'In-app chat · Help centre' },
+      { label: 'Status', value: 'Full-stack prototype' },
+    ],
+
+    overview: {
+      problem: [
+        'Shopping for everyday technology is often a noisy mix of disconnected product pages, ' +
+          'unclear delivery details and account screens that bury the things customers actually need.',
+      ],
+      response: [
+        'Rust Bucket brings the complete purchase journey into a single mobile app: curated product ' +
+          'discovery, considered product details, a quantity-aware bag, secure checkout, customer care ' +
+          'and order tracking — all wrapped in a distinctive evergreen-and-lime visual system.',
+      ],
+    },
+
+    featuresNote:
+      'These phone screens are rebuilt in HTML and CSS from the Rust Bucket Expo app. Product renders ' +
+      'are the same assets bundled with the app; the mockups use representative sample data.',
+    features: [
+      {
+        screen: <RustBucketShopScreen />,
+        label: 'Shop tab — featured Forge H1 and curated gadget collection',
+        kicker: 'Shop',
+        title: 'A storefront built around discovery',
+        desc:
+          'A personal greeting, product search, flagship feature and category-led collection make ' +
+          'the shop feel like a guided entry point rather than a wall of inventory.',
+        points: [
+          'Flagship product is surfaced as a visual campaign card.',
+          'Category chips and search support browsing the full catalogue.',
+          'Product tiles keep price and collection tags visible at a glance.',
+        ],
+        chips: ['Live catalogue', 'Search & categories'],
+      },
+      {
+        screen: <RustBucketProductScreen />,
+        label: 'Product detail — Forge H1 headphones with delivery and product assurances',
+        kicker: 'Product detail',
+        title: 'Product confidence, before add to bag',
+        desc:
+          'A focused detail view makes the product, price, rating, delivery promise and return cover ' +
+          'easy to scan before the purchase decision.',
+        points: [
+          'Favourite and bag shortcuts stay close to the product imagery.',
+          'Ratings, reviews and descriptions come from the catalogue.',
+          'Clear return and cover details sit beside the add-to-bag action.',
+        ],
+        chips: ['Favourites', 'Product assurances'],
+      },
+      {
+        screen: <RustBucketCartScreen />,
+        label: 'Bag — item quantities, free delivery, subtotal and secure checkout',
+        kicker: 'Your bag',
+        title: 'A clear, editable order summary',
+        desc:
+          'The bag keeps product choices editable while making shipping and the final total explicit.',
+        points: [
+          'Quantity controls update the cart without leaving the screen.',
+          'Removal, free delivery and totals are surfaced together.',
+          'A persistent glass tab bar displays the bag count across the app.',
+        ],
+        chips: ['Cart context', 'Free delivery'],
+      },
+      {
+        screen: <RustBucketSupportScreen />,
+        label: 'Customer care — support options and Moss live chat conversation',
+        kicker: 'Customer care',
+        title: 'Support is part of the shopping journey',
+        desc:
+          'Live chat and a help-centre shortcut sit alongside a simple conversation view, so help is ' +
+          'available without breaking the app’s familiar navigation.',
+        points: [
+          'Live chat and help centre are presented as clear next steps.',
+          'Chat messages are visually separated by speaker.',
+          'Delivery, returns and warranty remain close at hand.',
+        ],
+        chips: ['Live chat', 'Help centre'],
+      },
+      {
+        screen: <RustBucketProfileScreen />,
+        label: 'Account — light, dark and automatic themes with recent order history',
+        kicker: 'Your account',
+        title: 'Account tools, not just account details',
+        desc:
+          'A single profile screen combines appearance preferences, recent orders and warranty help.',
+        points: [
+          'Light, dark and system theme choices use the shared app palette.',
+          'Recent orders show the item count, total and delivery state.',
+          'Warranty and repair help is directly accessible.',
+        ],
+        chips: ['Theme preference', 'Order history'],
+      },
+      {
+        screen: <RustBucketCheckoutScreen />,
+        label: 'Checkout — delivery address, payment method and order total',
+        kicker: 'Checkout',
+        title: 'The final steps stay reassuringly simple',
+        desc:
+          'Delivery, payment and a compact order summary are grouped into a clear final review before placing an order.',
+        points: [
+          'Address and payment details are easy to confirm.',
+          'Line items and totals remain visible at checkout.',
+          'A single primary action completes the purchase flow.',
+        ],
+        chips: ['Order review', 'Secure payment'],
+      },
+    ],
+
+    visualSystem: {
+      types: [
+        {
+          role: 'Display · Sans',
+          name: 'Outfit',
+          weights: 'SemiBold 600 · Bold 700',
+          sample: 'Aa',
+          usage: 'Brand moments, product headlines and prices',
+          fontClassName: 'rb-outfit',
+        },
+        {
+          role: 'Interface · Sans',
+          name: 'Inter',
+          weights: 'Regular · Medium · SemiBold · Bold',
+          alphabet: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ\nabcdefghijklmnopqrstuvwxyz 0123456789',
+          usage: 'Product details, labels, navigation and controls',
+          fontClassName: 'rb-inter',
+        },
+      ],
+      palette: [
+        { name: 'Background', hex: '#FDF6E4' },
+        { name: 'Card', hex: '#FFFDF9' },
+        { name: 'Evergreen', hex: '#0D380C' },
+        { name: 'Fern', hex: '#516F00' },
+        { name: 'Palm', hex: '#A6A442' },
+        { name: 'Lime', hex: '#F4EC8F' },
+        { name: 'Foreground', hex: '#0B290A' },
+        { name: 'Muted', hex: '#596855' },
+      ],
+      note:
+        'Warm cream surfaces and evergreen actions give the shop a grounded, outdoors-inspired feel. ' +
+        'Fern and pale lime are reserved for emphasis, while a coordinated deep-pine theme provides ' +
+        'a richer dark-mode alternative.',
+    },
+
+    architecture: {
+      ariaLabel:
+        'The Expo mobile client sends catalogue, account and order requests to the Rust Bucket Express API, backed by MongoDB.',
+      flow: [
+        {
+          type: 'node',
+          small: 'Client',
+          title: 'Expo app',
+          desc: 'React Native · Expo Router · NativeWind',
+        },
+        { type: 'link', label: 'JSON API' },
+        {
+          type: 'node',
+          small: 'Server',
+          title: 'Express API',
+          desc: 'Authentication · Products · Favourites · Orders',
+          core: true,
+        },
+        { type: 'link', label: 'reads & writes' },
+        {
+          type: 'node',
+          title: 'MongoDB',
+          desc: 'Users · Product catalogue · Order history',
+        },
+      ],
+      decisions: [
+        {
+          title: 'One palette across light and dark',
+          desc:
+            'Shared theme tokens drive the app’s surfaces and controls, while the profile makes the ' +
+            'light, dark and system preference explicit.',
+        },
+        {
+          title: 'Cart state at the navigation root',
+          desc:
+            'The cart provider wraps the routed app, so the bag count and line items remain available ' +
+            'when customers move between shop, detail and checkout.',
+        },
+      ],
+    },
+
+    stack: [
+      'React Native',
+      'Expo SDK 57',
+      'Expo Router',
+      'TypeScript',
+      'NativeWind v4',
+      'AsyncStorage',
+      'Express',
+      'MongoDB',
+      'Mongoose',
+      'EAS Build',
+    ],
+
+    outcome: {
+      shipped: [
+        'A complete mobile storefront with discovery, product detail and favourites.',
+        'Cart quantity management and a guided checkout flow.',
+        'Customer-care chat, help centre and profile with order history.',
+        'Light, dark and system appearance preferences.',
+        'A production Android app bundle available to download.',
+      ],
+      nextSteps: [
+        'Publish the Android app bundle through Google Play and prepare an iOS build.',
+        'Connect checkout to a production payment provider.',
+        'Add order notifications and richer shipment tracking.',
+        'Expand catalogue merchandising and saved-item discovery.',
+      ],
+    },
+
+    cta: {
+      title: 'Built to make good tech feel easier',
+      desc:
+        'Rust Bucket is a full-stack portfolio project exploring how product discovery, support and ' +
+        'checkout can feel like one coherent mobile experience.',
+    },
   },
 
   /* ------- Coming Soon example — copy this block to stub a new app -------
