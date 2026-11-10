@@ -26,7 +26,7 @@ export const uiuxProjects: UIUXProject[] = [
       'The experience makes fresh produce easy to discover, understand and add to a basket, while ' +
       'keeping the people and farms behind each product in view.',
     tags: ['Website', 'E-commerce', 'Responsive Design', 'React', 'UI/UX'],
-    cover: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85',
+    cover: '/public/grass-routes/cover.png',
     ready: true,
     device: 'laptop',
 
