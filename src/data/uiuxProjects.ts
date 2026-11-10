@@ -1,4 +1,6 @@
 import type { UIUXProject } from '../types';
+import { createElement } from 'react';
+import { GrassroutesLiveScreen } from '../components/grassroutes/LaptopScreens';
 
 /**
  * UI/UX case studies rendered by src/pages/UIUXCaseStudyPage.tsx.
@@ -9,9 +11,109 @@ import type { UIUXProject } from '../types';
  *
  * Every section below the required fields is optional — leave one out and the
  * page simply skips that block. Set `ready: false` to show the Coming Soon
- * panel instead of the case study.
+ * panel instead of the case study. Screens in `screenshots` can use either a
+ * static `src` image or a coded React `screen`; set `device: 'laptop'` for
+ * website previews. `link` is optional and only shows a live-site button when
+ * supplied.
  */
 export const uiuxProjects: UIUXProject[] = [
+  {
+    slug: 'grassroutes',
+    title: 'Grassroutes',
+    tagline: 'Good food, close to home.',
+    desc:
+      'A responsive farm-to-table storefront that brings local growers and everyday shoppers closer. ' +
+      'The experience makes fresh produce easy to discover, understand and add to a basket, while ' +
+      'keeping the people and farms behind each product in view.',
+    tags: ['Website', 'E-commerce', 'Responsive Design', 'React', 'UI/UX'],
+    cover: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85',
+    ready: true,
+    device: 'laptop',
+
+    meta: [
+      { label: 'Role', value: 'Product design & frontend' },
+      { label: 'Platform', value: 'Responsive website' },
+      { label: 'Tools', value: 'Figma · React · CSS' },
+      { label: 'Screens', value: '14 live route previews' },
+      { label: 'Scope', value: 'Discovery to checkout' },
+      { label: 'Year', value: '2026' },
+    ],
+
+    overview: [
+      'Grassroutes is a farm-to-table shopping experience built around a simple idea: good food should feel close to home. Shoppers can explore seasonal produce, learn who grew it, and gather everyday essentials in one calm, welcoming storefront.',
+      'The interface pairs an editorial, produce-forward identity with familiar shopping patterns. Clear categories, farm details, visible prices and a simple basket help people move from browsing to checkout without losing the story behind their food.',
+    ],
+
+    problems: [
+      { title: 'Finding good local produce takes work', desc: 'Shoppers often discover growers through scattered social posts and word of mouth, with no easy way to browse what is available together.' },
+      { title: 'The source can disappear in the shopping flow', desc: 'Product listings rarely make the grower part of the decision, even when freshness and provenance matter.' },
+      { title: 'Shopping needs to feel simple and trustworthy', desc: 'A busy catalogue or unclear pricing adds friction to a familiar task and makes a new local marketplace harder to trust.' },
+    ],
+
+    solutions: [
+      { title: 'A clear path from home to harvest', desc: 'A focused landing page introduces the promise, then leads directly into categories and seasonal picks.' },
+      { title: 'Growers stay visible', desc: 'Farm names and product details sit close to the price and selection controls, keeping provenance part of the purchase.' },
+      { title: 'Familiar shopping patterns', desc: 'Responsive product cards, clear size choices and a readable basket make the experience easy to scan across screen sizes.' },
+    ],
+
+    process: [
+      { title: 'Discover', desc: 'Framed the experience around the relationship between local growers, fresh produce and everyday shoppers.' },
+      { title: 'Structure', desc: 'Mapped the core journey across the home page, shop, product details and basket.' },
+      { title: 'Design', desc: 'Built a warm visual system around greens, harvest yellow, generous typography and editorial food imagery.' },
+      { title: 'Build', desc: 'Translated the interface into a responsive React storefront with reusable product and page components.' },
+    ],
+
+    flows: [
+      { name: 'Browse the harvest', steps: ['Home', 'Shop', 'Category', 'Product details'] },
+      { name: 'Gather an order', steps: ['Product details', 'Choose a size', 'Add to basket', 'Review basket', 'Checkout'] },
+    ],
+
+    palette: [
+      { name: 'Harvest Green', hex: '#21813B', usage: 'Primary actions and brand accents' },
+      { name: 'Deep Field', hex: '#12321F', usage: 'Hero surfaces and strong contrast' },
+      { name: 'Fresh Paper', hex: '#F8F8F4', usage: 'Main page background' },
+      { name: 'Harvest Yellow', hex: '#F7CA38', usage: 'Calls to action and small highlights' },
+    ],
+    typography: [
+      { role: 'Display', name: 'Manrope', usage: 'Brand, headlines and product emphasis' },
+      { role: 'Interface', name: 'DM Sans', usage: 'Navigation, body copy and controls' },
+    ],
+    outcomes: [
+      'A complete responsive storefront concept from discovery through basket review.',
+      'Grower identity and product provenance remain visible while people browse.',
+      'Reusable React screens make the website previewable directly in this case study.',
+    ],
+    nextSteps: [
+      'Add seasonal availability and grower profiles to the storefront.',
+      'Usability-test category discovery, product sizing and checkout on mobile and desktop.',
+      'Connect product inventory and grower profiles to live data.',
+    ],
+    screenshots: [
+      ...[
+        { path: '/', caption: 'Home', group: 'Home' },
+        { path: '/shop', caption: 'Shop', group: 'Shop' },
+        { path: '/product/1', caption: 'Product details', group: 'Product details' },
+        { path: '/cart', caption: 'Basket', group: 'Basket' },
+        { path: '/delivery', caption: 'Pickup point', group: 'Delivery & checkout' },
+        { path: '/checkout', caption: 'Checkout', group: 'Delivery & checkout' },
+        { path: '/order-status', caption: 'Order status', group: 'Delivery & checkout' },
+        { path: '/about', caption: 'Our story', group: 'Our story' },
+        { path: '/about#our-values', caption: 'Our values', group: 'Our story' },
+        { path: '/login', caption: 'Sign in', group: 'Account' },
+        { path: '/register', caption: 'Create account', group: 'Account' },
+        { path: '/forgot-password', caption: 'Forgot password', group: 'Account' },
+        { path: '/verification', caption: 'Email verification', group: 'Account' },
+        { path: '/change-password', caption: 'Change password', group: 'Account' },
+      ].map(({ path, caption, group }) => ({
+        type: 'code' as const,
+        screen: createElement(GrassroutesLiveScreen, { path }),
+        caption,
+        group,
+      })),
+    ],
+    link: 'https://grass-routes-sable.vercel.app/',
+    figmaLink: null,
+  },
   {
     slug: 'averly-haven',
     title: 'Averly Haven',

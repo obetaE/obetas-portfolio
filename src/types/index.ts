@@ -39,19 +39,29 @@ export interface Project {
 /* UI/UX case studies (the /uiux/:slug page)                           */
 /* ------------------------------------------------------------------ */
 
-export interface Screenshot {
-  /** Path under /public. Encode spaces as %20. */
-  src: string;
-  /** Shown under the device frame and used as the alt text. */
+export interface ScreenshotBase {
+  /** Shown under the device frame and used as its accessible label. */
   caption: string;
   /** Groups screens into a labelled set, e.g. "Onboarding". */
   group?: string;
-  /**
-   * `true` for long scrolling screens (taller than a phone viewport).
-   * The device frame lets these scroll instead of cropping them.
-   */
+  /** `true` for long scrolling screens inside a phone frame. */
   tall?: boolean;
 }
+
+export interface ImageScreenshot extends ScreenshotBase {
+  type?: 'image';
+  /** Path under /public or an absolute image URL. Encode spaces as %20. */
+  src: string;
+}
+
+export interface CodeScreenshot extends ScreenshotBase {
+  type: 'code';
+  /** React screen component, kept in its product's portfolio component folder. */
+  screen: ReactNode;
+}
+
+/** A case-study screen can come from a static image or a coded component. */
+export type Screenshot = ImageScreenshot | CodeScreenshot;
 
 export interface PaletteColor {
   name: string;
@@ -115,6 +125,9 @@ export interface UIUXProject {
   typography?: TypeStyle[];
   outcomes?: string[];
   nextSteps?: string[];
+
+  /** Device shown around these screens; defaults to a phone. */
+  device?: 'phone' | 'laptop';
 
   screenshots: Screenshot[];
 

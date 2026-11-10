@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import LaptopFrame from '../components/LaptopFrame';
 import { ComingSoonPanel } from '../components/ComingSoonCard';
 import { findUIUXProject } from '../data';
 
@@ -60,6 +61,8 @@ const UIUXCaseStudyPage: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+
+  useEffect(() => setCurrentIndex(0), [project]);
 
   const screenshots = useMemo(() => project?.screenshots ?? [], [project]);
   const total = screenshots.length;
@@ -221,25 +224,23 @@ const UIUXCaseStudyPage: React.FC = () => {
 
           {/* ---------- Showcase: device + screen index ---------- */}
           {total > 0 && (
-            <div className="cs-showcase reveal">
+            <div className={`cs-showcase reveal ${project.device === 'laptop' ? 'cs-showcase-laptop' : ''}`}>
               <div className="cs-device-col">
-                <div
-                  className="device-mockup"
-                  onTouchStart={handleTouchStart}
-                  onTouchMove={handleTouchMove}
-                  onTouchEnd={handleTouchEnd}
-                >
-                  <div className="device-screen cs-device-screen">
-                    <img src={active.src} alt={active.caption} className="cs-device-img" />
+                {project.device === 'laptop' ? (
+                  <div className="cs-laptop-wrap" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+                    <LaptopFrame label={active.caption}>
+                      {active.type === 'code' ? active.screen : <img src={active.src} alt={active.caption} className="cs-device-img" />}
+                    </LaptopFrame>
                   </div>
-                  <div className="device-notch" />
-                  {active.tall && (
-                    <span className="cs-scroll-hint">
-                      <ScrollIcon />
-                      Scroll
-                    </span>
-                  )}
-                </div>
+                ) : (
+                  <div className="device-mockup" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+                    <div className="device-screen cs-device-screen">
+                      {active.type === 'code' ? active.screen : <img src={active.src} alt={active.caption} className="cs-device-img" />}
+                    </div>
+                    <div className="device-notch" />
+                    {active.tall && <span className="cs-scroll-hint"><ScrollIcon />Scroll</span>}
+                  </div>
+                )}
 
                 <p className="cs-caption">{active.caption}</p>
 
@@ -261,22 +262,24 @@ const UIUXCaseStudyPage: React.FC = () => {
               <div className="cs-index-col">
                 <h3 className="cs-block-title">Screen index</h3>
                 <p className="cs-block-lede">
-                  {total} frames across {groups.length} stages. Select one to view it in the device,
-                  or use the arrow keys.
+                  {total} section previews across {groups.length} pages. Choose a page, then a subsection
+                  to view it in the laptop.
                 </p>
 
                 {groups.map((group) => (
                   <div key={group.name} className="cs-group">
                     <h4 className="cs-group-name">{group.name}</h4>
                     <ul className="cs-group-list">
-                      {group.items.map((item) => (
+                      {group.items.map((item, subsectionIndex) => (
                         <li key={item.index}>
                           <button
                             className={`cs-group-item ${item.index === currentIndex ? 'is-active' : ''}`}
                             onClick={() => setCurrentIndex(item.index)}
                           >
                             <span className="cs-group-num">
-                              {String(item.index + 1).padStart(2, '0')}
+                              {project.device === 'laptop'
+                                ? `${String(groups.indexOf(group) + 1).padStart(2, '0')}.${String(subsectionIndex + 1).padStart(2, '0')}`
+                                : String(item.index + 1).padStart(2, '0')}
                             </span>
                             <span className="cs-group-label">{item.caption}</span>
                           </button>
@@ -470,7 +473,7 @@ const UIUXCaseStudyPage: React.FC = () => {
               </Link>
               {project.link && (
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="cs-btn cs-btn-ghost">
-                  Live prototype
+                  {project.device === 'laptop' ? 'Live website' : 'Live prototype'}
                 </a>
               )}
               {project.figmaLink && (

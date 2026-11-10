@@ -86,7 +86,7 @@ const uiux: Project[] = uiuxProjects.map((project) => ({
   title: project.title,
   desc: project.desc,
   tags: project.tags,
-  img: project.cover ?? project.screenshots[0]?.src ?? '',
+  img: project.cover ?? (project.screenshots[0] && 'src' in project.screenshots[0] ? project.screenshots[0].src : ''),
   link: `/uiux/${project.slug}`,
   ready: project.ready ?? true,
   comingSoonNote: project.comingSoonNote,
