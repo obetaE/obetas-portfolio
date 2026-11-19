@@ -68,6 +68,13 @@ const websites: Project[] = [
     img: '/techa.PNG',
     link: 'https://tech-academy-nine.vercel.app/',
   },
+  {
+    title: 'Golden Reed Music',
+    desc: 'Golden Reed Press is an online store for beginner saxophone sheet music. It targets new players, especially kids, and the parents and teachers who support them.',
+    tags: ['Next.js', 'Node.js', 'MongoDB', 'CSS'],
+    img: '/jazz.png',
+    link: 'https://golden-reed-music.vercel.app/',
+  },
 ];
 
 const apps: Project[] = mobileApps.map((app) => ({
